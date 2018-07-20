@@ -653,7 +653,7 @@ hue-6-2: #c18401
   padding-top: 10px; }
   .blog-post .post-header .meta-categories {
     font-family: 'Work Sans', sans-serif;
-    margin-bottom: -25px; }
+    margin: 10px 0px; }
     .blog-post .post-header .meta-categories a {
       background-color: #000;
       color: #fff;
@@ -842,29 +842,26 @@ hue-6-2: #c18401
     .blog-post-content .gist-data table tr {
       border: none; }
 
-.section .archive-title {
-  margin-bottom: 20px; }
-
-.section h4 {
-  font-size: 30px; }
-
-.section .articles {
-  border-left: 1px solid #e6e6e6; }
-  .section .articles .articles-content {
-    border-left: 3px solid transparent;
-    padding: 1em 1.5em;
-    margin-bottom: -10px; }
-    .section .articles .articles-content time {
-      font-size: 14px; }
-    .section .articles .articles-content h6 {
-      font-size: 18px;
-      margin-top: 0;
-      margin-bottom: 0; }
-  .section .articles .articles-content:hover {
-    border-left: 3px solid #42bdcd; }
-
 .section {
-  margin-top: -60px; }
+  margin-top: -40px; }
+  .section .archive-title {
+    margin-bottom: 20px; }
+  .section h4 {
+    font-size: 25px; }
+  .section .articles {
+    border-left: 1px solid #e6e6e6; }
+    .section .articles .articles-content {
+      border-left: 3px solid transparent;
+      padding: 1em 1.5em;
+      margin-bottom: -10px; }
+      .section .articles .articles-content time {
+        font-size: 14px; }
+      .section .articles .articles-content h6 {
+        font-size: 18px;
+        margin-top: 0;
+        margin-bottom: 0; }
+    .section .articles .articles-content:hover {
+      border-left: 3px solid #42bdcd; }
 
 .section-heading h5 {
   font-size: 23px;
@@ -876,14 +873,10 @@ hue-6-2: #c18401
   padding: 3px 8px;
   font-weight: 200; }
 
-.content {
-  margin-top: 100px;
-  margin-bottom: -30px; }
-
 .list-content {
   font-size: 16px;
   display: flex;
-  padding: 50px 0px;
+  padding: 10px 0px;
   margin: 30px 0px;
   flex-wrap: wrap; }
   .list-content .category-link {
