@@ -1,0 +1,318 @@
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Disable transformation -->
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+  <meta name="theme-color" content="#42dbbc" />
+  <meta name="msapplication-navbutton-color" content="#f8f5ec" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec" />
+
+  
+  
+  
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+  
+
+  <title>Tom&#39;s Home</title>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+  
+    <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+  
+
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script>
+    window.config = {"title":"Tom's Home","subtitle":"Tom makes world better again","description":null,"author":"Tom Liu","language":"en-US","timezone":null,"url":"https://suyuanliu.github.io","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":null,"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":{"enable":true,"auto_detect":false,"line_number":true,"tab_replace":null},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":10,"pagination_dir":"page","theme":"cicada","deploy":{"type":"git","repo":"git@github.com:SuyuanLiu/suyuanliu.github.io.git","branch":"master"},"ignore":[],"keywords":null,"index_generator":{"per_page":10,"order_by":"-date","path":""},"archive_generator":{"per_page":10,"yearly":true,"monthly":true,"daily":false},"category_generator":{"per_page":10},"tag_generator":{"per_page":10},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true,"modifyAnchors":"","autolink":true},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true},"favicon":"/images/favicon.ico","menu":{"home":"/","archives":"/archives","categories":"/categories","tags":"/tags"},"excerpt_link":"Read More","fancybox":true,"mathjax":true,"copyright":{"enable":false,"license":"<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc/4.0/\" target=\"_blank\">知识共享署名-非商业性使用 4.0 国际许可协议</a>"},"disqus_shortname":"lsy","social":{"email":"suyuanliu0618@gmail.com","instagram":null,"douban":null,"linkedin":null,"weibo":null,"stackoverflow":null,"facebook":null,"twitter":null,"github":"https://github.com/suyuanliu","rss":null,"google":null,"zhihu":null,"pocket":null},"google_analytics":null};
+  </script>
+</head>
+  <body>
+    <div class="container">
+      <div class="blog-header-wrap">
+  <div class="header-logo">
+    <h1>
+      <a href="/" class="blog-title">Tom&#39;s Home</a>
+    </h1>
+    <p class="lead blog-description">Tom makes world better again</p>
+  </div>
+</div>
+      <div>
+  <div class="blog-masthead">
+    <div class="container">
+      <nav class="blog-nav">
+        
+          <a class="blog-nav-item" href="/">Home</a>
+        
+          <a class="blog-nav-item" href="/archives">Archives</a>
+        
+          <a class="blog-nav-item" href="/categories">Categories</a>
+        
+          <a class="blog-nav-item" href="/tags">Tags</a>
+        
+      </nav>
+    </div>
+  </div>
+
+  <div class="blog-mobile-masthead">
+    <nav class="mobile-nav">
+      
+        <a class="mobile-nav-item" href="/">Home</a>
+      
+        <a class="mobile-nav-item" href="/archives">Archives</a>
+      
+        <a class="mobile-nav-item" href="/categories">Categories</a>
+      
+        <a class="mobile-nav-item" href="/tags">Tags</a>
+      
+    </nav>
+  </div>
+</div>
+      <div class="blog-main">
+        <div class="blog-post">
+  <div class="post-header">
+    
+      
+
+  
+    <h2 class="blog-post-title">
+      <a href="/2018/07/26/jupyter-notebook/">
+        Jupyter Notebook 安装及入门使用
+      </a>
+    </h2>
+  
+
+<div class="blog-post-meta">
+  <div class="meta-date">
+    2018-07-26
+    
+      / by Tom
+    
+  </div>
+</div>
+<div class="meta-categories">
+  
+
+
+  
+    <a href="/categories/jupyter-notebook/">jupyter notebook</a>
+  
+
+</div>
+    
+  </div>
+
+  <div class="blog-post-content">
+    
+      <p>这里记录一下jupyter notebook 的安装以及初级入门使用过程。参考<a href="https://zhuanlan.zhihu.com/p/33105153" target="_blank" rel="noopener">Jupyter Notebook介绍、安装及使用教程</a><br><a id="more"></a></p>
+<p>以下均在Windows上面进行，关于Mac/Linux可以看参考的文章。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
+<li>前提：电脑已经安装Python</li>
+<li>使用pip命令安装：<code>pip3 install jupyter</code></li>
+</ul>
+<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><ul>
+<li>在终端(Windows: win+R, 输入cmd)中输入以下命令：<code>jupyter notebook</code></li>
+<li>之后会自动打开默认浏览器，打开8888端口，如果打开多个，端口号从8889依次递增，使用过程中不要关掉终端；</li>
+<li>第一次打开会发现已经有很多文件夹，是自己的电脑的文件，希望更改文件存放地址，可以根据以下步骤来给自己一个清爽的界面：<ul>
+<li>在自己想要存放jupyter notebook文件的位置创建目录（右上角有个new-folder),接下来去配置文件中修改默认路径（如下）；</li>
+<li>在终端输入命令<code>jupyter notebook --generate-config</code>，查看配置文件路径；</li>
+<li>根据上面查到的路径，打开配置文件<code>jupyter_notebook_config.py</code>(这边我用的是VS code,其他的IDE都可以)；</li>
+<li>在配置文件中查找<code>c.NotebookApp.notebook_dir</code>,把刚刚自己新建的文件路径填写进去，然后取消注释并保存，然后再在终端中运行<code>jupyter notebook</code>，就会发现打开的就是自己后来建的文件夹；</li>
+<li>说明：根据参考的那篇文章，是复制浏览器地址栏的路径，但是我这边会报错，于是我直接把文件具体路径输入进去，(我的是<code>c.NotebookApp.notebook_dir = &#39;C:/Users/ye/Desktop/for_jupyter_notebook&#39;</code>)；</li>
+</ul>
+</li>
+</ul>
+<h2 id="安装拓展功能"><a href="#安装拓展功能" class="headerlink" title="安装拓展功能"></a>安装拓展功能</h2><h3 id="conda"><a href="#conda" class="headerlink" title="conda"></a>conda</h3><ul>
+<li>安装：终端输入命令<code>conda install nb_conda</code></li>
+<li>上述命令就将jupyter notebook与conda环境关联起来了；</li>
+<li>关于使用:<img src="../images/jupyter-notebook/conda.jpg" alt="image"><br><img src="../images/jupyter-notebook/conda_kernel.jpg" alt="image"></li>
+</ul>
+<h3 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h3><ul>
+<li>安装：终端输入命令<code>conda install -c conda-forge jupyter_contrib_nbextensions</code></li>
+<li>看jupyter notebook的导航栏多了“Nbextensions”，点击“Nbextensions”，勾选第二列倒数第二个“Table<br>of Contents ⑵”；</li>
+</ul>
+<h2 id="入门使用"><a href="#入门使用" class="headerlink" title="入门使用"></a>入门使用</h2><h3 id="code一下"><a href="#code一下" class="headerlink" title="code一下"></a>code一下</h3><ul>
+<li>新建ipynb文件：在jupyter notebook的主界面file下，右侧new一个Python即可；</li>
+<li>重命名文件：可以在主界面选中文件点Rename，也可以在文件打开的页面，直接点击名字就会弹出重命名的窗口；</li>
+<li>在cell里面输入代码，按ctrl+Enter，执行当前cell代码；</li>
+</ul>
+<h3 id="markdown"><a href="#markdown" class="headerlink" title="markdown"></a>markdown</h3><ul>
+<li>markdown可以用于代码的注释；点击菜单栏的像目录一样的图标，里面就会出现目录；</li>
+<li>插入cell后可以在菜单栏手动选择为Markdown，也可以在命令模式下使用快捷键M;</li>
+<li>语法就是Markdown语法；</li>
+</ul>
+<h3 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h3><ul>
+<li>快捷键的查询可以在点击help–keyboard shortcuts</li>
+<li>下面记录几个常用快捷键,分为命令模式和编辑模式：<ul>
+<li>命令模式按esc（或者鼠标直接点击外面部分）,当前选中cell前面会是蓝色竖线；</li>
+<li>编辑模式按Enter（或者鼠标点击一下cell），当前选中cell前面是绿色竖线；</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">keyboard shortcuts</th>
+<th style="text-align:center">function</th>
+<th style="text-align:center">Mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ctrl+enter</td>
+<td style="text-align:center">只执行当前cell</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">shift+enter</td>
+<td style="text-align:center">执行当前cell并跳到下一个cell，如果下面没有cell则新建</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">alt+enter</td>
+<td style="text-align:center">执行当前cell并在当前cell后面新建一个cell</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">D+D</td>
+<td style="text-align:center">删除当前选中cell</td>
+<td style="text-align:center">命令模式</td>
+</tr>
+<tr>
+<td style="text-align:center">M</td>
+<td style="text-align:center">切换为MarkDown</td>
+<td style="text-align:center">命令模式</td>
+</tr>
+<tr>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">切换为code</td>
+<td style="text-align:center">命令模式</td>
+</tr>
+<tr>
+<td style="text-align:center">F</td>
+<td style="text-align:center">查找</td>
+<td style="text-align:center">命令模式</td>
+</tr>
+<tr>
+<td style="text-align:center">Z</td>
+<td style="text-align:center">撤销删除cell操作</td>
+<td style="text-align:center">命令模式</td>
+</tr>
+<tr>
+<td style="text-align:center">1(2,3,4,5,6)</td>
+<td style="text-align:center">直接把当前选中cell第一行切换为1(2,3,4,5,6)级标题</td>
+<td style="text-align:center">命令模式</td>
+</tr>
+</tbody>
+</table>
+<h3 id="shell命令，terminal"><a href="#shell命令，terminal" class="headerlink" title="shell命令，terminal"></a>shell命令，terminal</h3><ul>
+<li>Windows系统不支持shell,terminal在这里也是不可用的；</li>
+<li>具体有关命令可以参考<a href="https://zhuanlan.zhihu.com/p/33105153" target="_blank" rel="noopener">Jupyter Notebook介绍、安装及使用教程</a></li>
+</ul>
+<h2 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h2><p><a href="https://zhuanlan.zhihu.com/p/33105153" target="_blank" rel="noopener">Jupyter Notebook介绍、安装及使用教程</a></p>
+
+    
+  </div>
+
+  
+    
+  
+
+  
+    
+
+<div class="blog-tags-container">
+  <a href="/tags/python3/">#python3</a> <a href="/tags/jupyter-notebook/">#jupyter notebook</a> <a href="/tags/tools/">#tools</a>
+</div>
+
+    <div class="blog-post-more">
+  
+  
+  <div class="blog-post-next">
+    <span>next article</span>
+    <a href="/2018/07/20/sort/">排序算法</a>
+  </div>
+  
+</div>
+    
+  <div class="blog-post-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </div>
+
+  
+</div>
+      </div>
+    </div>
+    <footer class="blog-footer">
+  <div class="footer">
+    
+
+
+  <div class="blog-footer-social">
+    <ul>
+      
+        
+          <li><a class="iconfont icon-email" href="mailto:suyuanliu0618@gmail.com"></a></li>
+        
+      
+        
+          <li><a class="iconfont icon-github" href="https://github.com/suyuanliu"></a></li>
+        
+      
+    </ul>
+  </div>
+ 
+    <div class="blog-foot-copyright">
+  <p class="copyright">Copyright © 2018 Tom Liu. Powered by <a href="https://hexo.io/">Hexo</a> and <a href="https://github.com/Kexin-Li/hexo-theme-cicada">Cicada</a>.</p>
+</div>
+  </div>
+</footer>
+
+<script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+
+
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+<script type="text/javascript" src="/js/cicada.js"></script>
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+
+
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+<script type="text/javascript" src="/js/cicada.js"></script>
+    
+
+
+  
+  <script type="text/javascript">
+    var disqus_shortname = 'lsy';
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }());
+  </script>
+
+
+  </body>
+</html>
