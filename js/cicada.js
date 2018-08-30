@@ -19,9 +19,10 @@
       this.statistic();
     }
     this.backToTop();
-    // this.addHashTag();
     this.popupMenu();
+    this.highlight();
     // this.tagCount();
+    // this.addHashTag();  // its ugly
   };
 
 
@@ -116,6 +117,20 @@
   };
 
 
+  /**
+   * Code hightlight
+   */
+  Cicada.prototype.highlight = function() {
+    $('figure.highlight').addClass('hljs');
+    $('figure.highlight .code .line > span').each(function () {
+        const classes = $(this).attr('class').split(' ');
+        if (classes.length === 1) {
+            $(this).addClass('hljs-' + classes[0]);
+        }
+    });
+  }
+
+ 
   let config = window.config;
   let cicada = new Cicada(config);
   cicada.setup();

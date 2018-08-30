@@ -356,8 +356,7 @@ th {
   padding: 0; }
 
 .blog-post .post-header a:hover, .post-content .post-detail a, .blog-footer .blog-foot-copyright a, .card .content a {
-  border-bottom: 2px rgba(117, 171, 234, 0.8) solid;
-  padding-bottom: 1px; }
+  border-bottom: 2px rgba(117, 171, 234, 0.8) solid; }
 
 #menu a:hover, #menu a:active, .blog-header ul li a:hover, .blog-header ul li a:active, .post-content .post-detail a:hover, .post-content .post-more a:hover, .blog-archive .articles .articles-content:hover, .blog-archive .articles .articles-content:active, .blog-archive .articles .articles-content:hover a, .blog-archive .articles .articles-content:active a, .blog-footer .blog-foot-copyright a:hover, .blog-footer .blog-foot-copyright a:active, .card .content a:hover, .card .content a:active {
   color: #5699e6; }
@@ -372,7 +371,7 @@ html {
 
 body {
   padding: 0;
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.6;
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", sans-serif;
   scroll-behavior: smooth;
@@ -381,8 +380,7 @@ body {
 
 abbr, acronym {
   text-decoration: none;
-  border-bottom: 2px #75abea dashed;
-  padding-bottom: 1px; }
+  border-bottom: 2px #75abea dashed; }
 
 img {
   display: block;
@@ -556,6 +554,8 @@ hr {
     @media screen and (max-width: 800px) {
       .blog-post .post-img {
         height: 200px; } }
+  .blog-post .post-header .post-title {
+    margin-bottom: 10px; }
 
 .post-content {
   padding: 25px; }
@@ -605,55 +605,25 @@ hr {
   .post-content .post-comments {
     margin: 60px 0; }
   .post-content .post-meta {
-    font-weight: 400;
+    font-weight: 300;
     font-size: 14px;
     text-align: left;
-    font-family: Menlo, sans-serif; }
+    font-family: "Songti SC", Georgia, Menlo, serif;
+    margin-bottom: 2em; }
   @media screen and (max-width: 800px) {
     .post-content {
       padding: 10px; } }
 
 blockquote {
-  font-weight: 600;
-  font-size: 18px;
-  position: relative;
-  padding-left: 45px;
-  padding-top: 5px;
-  margin-bottom: 40px; }
+  font-family: Georgia, "Songti SC", serif;
+  font-style: italic;
+  color: rgba(73, 80, 88, 0.7);
+  border-left: 4px solid #75abea;
+  margin: 1.5em 0px;
+  padding: 0.5em 10px; }
 
-blockquote.left {
-  margin-left: 0.5em;
-  margin-right: 1em;
-  float: left; }
-
-blockquote.right {
-  margin-left: 0.5em;
-  margin-right: 1em;
-  float: right; }
-
-blockquote::before {
-  content: ' ';
-  position: absolute;
-  top: 15px;
-  left: 5px;
-  width: 1.5rem;
-  height: 1.5rem;
-  opacity: 0.1;
-  background: url("../assets/quote-left.svg") 0 0/1.5rem 1.5rem no-repeat; }
-
-blockquote p::after {
-  content: ' ';
-  position: absolute;
-  margin: 0 5px;
-  width: 2rem;
-  height: 2rem;
-  opacity: 0.1;
-  background: url("../assets/quote-right.svg") 0 0/1rem 1rem no-repeat; }
-
-blockquote footer {
-  font-weight: 400;
-  font-size: 14px;
-  overflow-x: auto; }
+blockquote p {
+  display: inline; }
 
 code {
   background-color: #E5EFFB;
@@ -694,12 +664,14 @@ figure.highlight {
 
 table {
   width: 100%; }
-  table tr:nth-of-type(odd) {
+  table tr:nth-of-type(even) {
     background: #fcf8ef; }
   table th {
+    text-transform: uppercase;
     background: #faeed2; }
   table td, table th {
     padding: 6px;
+    font-size: 17px;
     text-align: center;
     border: 1px solid rgba(0, 0, 0, 0.07); }
 
