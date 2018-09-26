@@ -101,23 +101,19 @@
     </div>
     <div class="post-detail">
       
-        <p>这里记录一下jupyter notebook 的安装以及初级入门使用过程。参考<a href="https://zhuanlan.zhihu.com/p/33105153" target="_blank" rel="noopener">Jupyter Notebook介绍、安装及使用教程</a><br><a id="more"></a></p>
-<p>以下均在Windows上面进行，关于Mac/Linux可以看参考的文章。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
-<li>前提：电脑已经安装Python</li>
-<li>使用pip命令安装：<code>pip3 install jupyter</code></li>
-</ul>
-<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><ul>
-<li>在终端(Windows: win+R, 输入cmd)中输入以下命令：<code>jupyter notebook</code></li>
-<li>之后会自动打开默认浏览器，打开8888端口，如果打开多个，端口号从8889依次递增，使用过程中不要关掉终端；</li>
-<li>第一次打开会发现已经有很多文件夹，是自己的电脑的文件，希望更改文件存放地址，可以根据以下步骤来给自己一个清爽的界面：<ul>
+        <p>这里记录一下jupyter notebook 的安装以及初级入门使用过程。参考<a href="https://zhuanlan.zhihu.com/p/33105153" target="_blank" rel="noopener">Jupyter Notebook介绍、安装及使用教程</a></p>
+<p>以下均在Windows上面进行，关于Mac/Linux可以看参考的文章。<br><a id="more"></a></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>前提：电脑已经安装Python</p>
+<p>使用pip命令安装：<code>pip3 install jupyter</code></p>
+<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><p>在终端(Windows: win+R, 输入cmd)中输入以下命令：<code>jupyter notebook</code>;</p>
+<p>之后会自动打开默认浏览器，打开8888端口，如果打开多个，端口号从8889依次递增，使用过程中不要关掉终端；</p>
+<p>第一次打开会发现已经有很多文件夹，是自己的电脑的文件，希望更改文件存放地址，可以根据以下步骤来给自己一个清爽的界面：</p>
+<ul>
 <li>在自己想要存放jupyter notebook文件的位置创建目录（右上角有个new-folder),接下来去配置文件中修改默认路径（如下）；</li>
 <li>在终端输入命令<code>jupyter notebook --generate-config</code>，查看配置文件路径；</li>
 <li>根据上面查到的路径，打开配置文件<code>jupyter_notebook_config.py</code>(这边我用的是VS code,其他的IDE都可以)；</li>
 <li>在配置文件中查找<code>c.NotebookApp.notebook_dir</code>,把刚刚自己新建的文件路径填写进去，然后取消注释并保存，然后再在终端中运行<code>jupyter notebook</code>，就会发现打开的就是自己后来建的文件夹；</li>
 <li>说明：根据参考的那篇文章，是复制浏览器地址栏的路径，但是我这边会报错，于是我直接把文件具体路径输入进去，(我的是<code>c.NotebookApp.notebook_dir = &#39;C:/Users/ye/Desktop/for_jupyter_notebook&#39;</code>)；</li>
-</ul>
-</li>
 </ul>
 <h2 id="安装拓展功能"><a href="#安装拓展功能" class="headerlink" title="安装拓展功能"></a>安装拓展功能</h2><h3 id="conda"><a href="#conda" class="headerlink" title="conda"></a>conda</h3><ul>
 <li>安装：终端输入命令<code>conda install nb_conda</code></li>
@@ -213,98 +209,19 @@
 <li>Windows系统不支持shell,terminal在这里也是不可用的；</li>
 <li>具体有关命令可以参考<a href="https://zhuanlan.zhihu.com/p/33105153" target="_blank" rel="noopener">Jupyter Notebook介绍、安装及使用教程</a></li>
 </ul>
-<h2 id="进阶使用"><a href="#进阶使用" class="headerlink" title="进阶使用"></a>进阶使用</h2><h3 id="魔法函数"><a href="#魔法函数" class="headerlink" title="魔法函数"></a>魔法函数</h3><ul>
-<li>符号说明：<ul>
+<h2 id="进阶使用-–-魔法函数"><a href="#进阶使用-–-魔法函数" class="headerlink" title="进阶使用 – 魔法函数"></a>进阶使用 – 魔法函数</h2><p><strong>符号说明</strong></p>
+<ul>
 <li>%： 行魔法函数，只对本行代码生效；</li>
 <li>%%：Cell魔法函数，对整个cell生效，放在cell首行；</li>
 <li>%Ismagic: 列出所有的魔法函数；</li>
 <li>%magic: 查看各个魔法函数的说明</li>
 <li>?：后面加上魔法函数 名称，查看该函数说明；</li>
 </ul>
-</li>
-<li>常用魔法函数：</li>
+<p><strong>常用魔法函数</strong><br>|magic function|function|explanation|<br>|:————:|:——:|:———:|<br>|%pwd|查看当前目录||<br>|%ls|列出当前目录的文件||<br>|%run|运行调用外部Python脚本|后面跟Python脚本的绝对路径|<br>|%timeit|单行语句的执行时间||<br>|%%timeit|整个cell内语句的执行时间||<br>|%matplotlib inline|显示matplotlib生成的图形|用在画图之前|<br>|%reset|清除所有变量||<br>|%pdb|调试程序||<br>|%who|查看所有全局变量的名称，若给定类型参数，只返回该类型的变量列表||<br>|%whos|显示所有全局变量的名称、类型、值/信息||<br>|%xmode Plain|设置为当异常发生时只展示简单的异常信息||<br>|%xmode Verbose|设置为当异常发生时只展示详细的异常信息||<br>|%debug|bug调试，输入quit退出调试||<br>|%env|列出全部环境变量||</p>
+<h2 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h2><ul>
+<li><a href="https://zhuanlan.zhihu.com/p/33105153" target="_blank" rel="noopener">Jupyter Notebook介绍、安装及使用教程</a></li>
+<li><a href="https://blog.csdn.net/DataCastle/article/details/78890469" target="_blank" rel="noopener">最详尽使用指南：超快上手Jupyter Notebook</a></li>
 </ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">magic function</th>
-<th style="text-align:center">function</th>
-<th style="text-align:center">explanation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">%pwd</td>
-<td style="text-align:center">查看当前目录</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center">%ls</td>
-<td style="text-align:center">列出当前目录的文件</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center">%run</td>
-<td style="text-align:center">运行调用外部Python脚本</td>
-<td style="text-align:center">后面跟Python脚本的绝对路径</td>
-</tr>
-<tr>
-<td style="text-align:center">%timeit</td>
-<td style="text-align:center">单行语句的执行时间</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center">%%timeit</td>
-<td style="text-align:center">整个cell内语句的执行时间</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center">%matplotlib inline</td>
-<td style="text-align:center">显示matplotlib生成的图形</td>
-<td style="text-align:center">用在画图之前</td>
-</tr>
-<tr>
-<td style="text-align:center">%reset</td>
-<td style="text-align:center">清除所有变量</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center">%pdb</td>
-<td style="text-align:center">调试程序</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center">%who</td>
-<td style="text-align:center">查看所有全局变量的名称，若给定类型参数，只返回该类型的变量列表</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center">%whos</td>
-<td style="text-align:center">显示所有全局变量的名称、类型、值/信息</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center">%xmode Plain</td>
-<td style="text-align:center">设置为当异常发生时只展示简单的异常信息</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center">%xmode Verbose</td>
-<td style="text-align:center">设置为当异常发生时只展示详细的异常信息</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center">%debug</td>
-<td style="text-align:center">bug调试，输入quit退出调试</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center">%env</td>
-<td style="text-align:center">列出全部环境变量</td>
-</tr>
-</tbody>
-</table>
-<h2 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h2><p><a href="https://zhuanlan.zhihu.com/p/33105153" target="_blank" rel="noopener">Jupyter Notebook介绍、安装及使用教程</a><br><a href="https://blog.csdn.net/DataCastle/article/details/78890469" target="_blank" rel="noopener">最详尽使用指南：超快上手Jupyter Notebook</a></p>
 
         <hr>
       
