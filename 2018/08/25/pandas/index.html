@@ -1,0 +1,255 @@
+
+
+<html lang="en-US">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+  <meta name="theme-color" content="#42dbbc" />
+  <meta name="msapplication-navbutton-color" content="#f8f5ec" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec" />
+
+  
+  
+  
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+  
+
+  <title>Tom&#39;s Home</title>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+  
+    <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+  
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+
+  <link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <script>
+    window.config = {"title":"Tom's Home","subtitle":"About Me","description":null,"author":"Tom Liu","language":"en-US","timezone":null,"url":"https://suyuanliu.github.io","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":null,"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":"atom-one-light","default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":10,"pagination_dir":"page","theme":"cicada","deploy":{"type":"git","repo":"git@github.com:SuyuanLiu/suyuanliu.github.io.git","branch":"master"},"ignore":[],"keywords":null,"index_generator":{"per_page":10,"order_by":"-date","path":""},"archive_generator":{"per_page":10,"yearly":true,"monthly":true,"daily":false},"category_generator":{"per_page":10},"tag_generator":{"per_page":10},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true,"modifyAnchors":"","autolink":true},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true},"favicon":"/images/favicon.ico","menu":{"home":"/","archives":"/archives"},"show_tag":true,"show_category":false,"excerpt_link":"Read More","fancybox":true,"disqus_shortname":null,"rss":"default","social":{"email":"dasd","instagram":"dasd","douban":"das","linkedin":"dsa","weibo":null,"stackoverflow":null,"facebook":null,"twitter":null,"github":null,"google":null,"zhihu":null,"pocket":null},"friends":{"ZERO's Blog":"https://kexin-li.github.io"},"google_analytics":null,"portfolio":{"subtitle":"Some Works","cards":{"card1":{"cover":"/images/screenshot.png","content":"Cicada is a concise and retro Hexo theme.","link":"https://github.com/Kexin-Li/hexo-theme-cicada"},"card2":{"cover":"/images/screenshot.png","content":"Cicada is a Hexo theme, it tastes like summer.","link":"http://kexin-li.github.io"},"card3":{"cover":"/images/screenshot.png","content":"Cicada is a Hexo theme, it tastes like summer.","link":"http://kexin-li.github.io"}}},"about":null,"poem":false};
+  </script>
+</head>
+  <body>
+    
+
+<header class="blog-slide" style="height: px">
+  <nav class="blog-header">
+    <a class="mobile toggle-button"><i class="fas fa-bars fa-lg"></i></a>
+    <ul>
+      <li class="title"><a href="/">Tom&#39;s Home</a></li>
+      
+        <li class="nav-item"><a href="/">Home</a></li>
+      
+        <li class="nav-item"><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </nav>
+  <h1 class="subtitle"><span id='jinrishici-sentence'>Tom makes world better again</span></h1>
+</header>
+    <nav id="menu">
+  
+    <a href="/">Home</a>
+  
+    <a href="/archives">Archives</a>
+  
+</nav>
+    
+    <main class="blog-main" style="margin-top: -150px">
+      <article class="blog-post">
+  
+
+  <div class="post-content">
+    <div class="post-header">
+      
+        
+  
+    <h1 class="post-title">
+      <a href="/2018/08/25/pandas/">
+        Pandas的基本使用
+      </a>
+    </h1>
+  
+
+<div class="post-meta">
+  2018-08-25
+  
+    | by Tom
+  
+  
+</div>
+
+      
+    </div>
+    <div class="post-detail">
+      
+        <p>下面是Python的pandas的基本使用。</p>
+<a id="more"></a>
+<h2 id="Pandas"><a href="#Pandas" class="headerlink" title="Pandas"></a>Pandas</h2><blockquote>
+<p>pandas(pannel data analysis)面板数据分析，基于numpy构建，用于时间序列的分析。主要有两个数据结构：Series, DataFrame。</p>
+</blockquote>
+<h3 id="Series"><a href="#Series" class="headerlink" title="Series"></a>Series</h3><ul>
+<li>Series是由一组数据和与之对应的数据标签(索引index)组成,<code>x = Series([1,2,3], index=[&#39;a&#39;, &#39;b&#39;,&#39;v&#39;])</code>；<ul>
+<li>数据和索引的基础都是一个一维的数组,index缺省时默认为从0开始递增的整数，index数组的内容可以是整数，字符串或者整数和字符串；</li>
+<li>index可以理解为行索引；访问一个值可以根据索引来访问，<code>x[&#39;a&#39;]</code>；</li>
+<li>获取值和索引的方式为<code>x.values, x.index</code>,返回一维数组；</li>
+<li>Series数据的表现形式为：索引在左，数据在右；</li>
+<li>注意：索引index可以用x.index来访问（一维数组），但是不可以修改；</li>
+</ul>
+</li>
+<li><p>Series可以用一维数组来构建，也可以用字典来构建；</p>
+</li>
+<li><p>由一维数组构建Series</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> Series,DataFrame</span><br><span class="line"></span><br><span class="line">x = Series([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>], index=[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>])</span><br><span class="line">print(x)</span><br><span class="line">print(x.values)</span><br><span class="line">print(x.index)</span><br><span class="line">print(<span class="string">'\n'</span>, x[[<span class="string">'a'</span>,<span class="string">'b'</span>]])</span><br><span class="line">print(<span class="string">'\n'</span>, x[x &gt; <span class="number">1</span>])</span><br><span class="line">print(<span class="string">'a'</span> <span class="keyword">in</span> x)</span><br><span class="line"></span><br><span class="line"><span class="comment"># output</span></span><br><span class="line">a    <span class="number">1</span></span><br><span class="line">b    <span class="number">2</span></span><br><span class="line">c    <span class="number">3</span></span><br><span class="line">dtype: int64</span><br><span class="line">[<span class="number">1</span> <span class="number">2</span> <span class="number">3</span>]</span><br><span class="line">Index([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>], dtype=<span class="string">'object'</span>)</span><br><span class="line"></span><br><span class="line">a    <span class="number">1</span></span><br><span class="line">b    <span class="number">2</span></span><br><span class="line">dtype: int64</span><br><span class="line"></span><br><span class="line">b    <span class="number">2</span></span><br><span class="line">c    <span class="number">3</span></span><br><span class="line">dtype: int64</span><br><span class="line"></span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>由字典构建Series</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">data = &#123;<span class="string">'a'</span>:<span class="number">1</span>, <span class="string">'b'</span>:<span class="number">3</span>, <span class="string">'c'</span>:<span class="number">5</span>, <span class="string">'t'</span>:<span class="number">10</span>&#125;</span><br><span class="line">x = Series(data)</span><br><span class="line">print(x)</span><br><span class="line">index_ = [<span class="string">'a'</span>, <span class="string">'c'</span>, <span class="string">'b'</span>, <span class="string">'z'</span>, <span class="string">'g'</span>]   <span class="comment"># 可以给换index，只匹配对应的部分，不对应的或者少的对应的值设为NaN;</span></span><br><span class="line">y = Series(data, index=index_)</span><br><span class="line">print(y)</span><br><span class="line">print(x+y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># output</span></span><br><span class="line">a     <span class="number">1</span></span><br><span class="line">b     <span class="number">3</span></span><br><span class="line">c     <span class="number">5</span></span><br><span class="line">t    <span class="number">10</span></span><br><span class="line">dtype: int64</span><br><span class="line">a    <span class="number">1.0</span></span><br><span class="line">c    <span class="number">5.0</span></span><br><span class="line">b    <span class="number">3.0</span></span><br><span class="line">z    NaN</span><br><span class="line">g    NaN</span><br><span class="line">dtype: float64</span><br><span class="line">a     <span class="number">2.0</span></span><br><span class="line">b     <span class="number">6.0</span></span><br><span class="line">c    <span class="number">10.0</span></span><br><span class="line">g     NaN</span><br><span class="line">t     NaN</span><br><span class="line">z     NaN</span><br><span class="line">dtype: float64</span><br><span class="line"></span><br><span class="line">y.name = <span class="string">'weight of letters'</span></span><br><span class="line">y.index.name = <span class="string">'letter'</span></span><br><span class="line">print(y)</span><br><span class="line">y.index = [<span class="string">'a'</span>, <span class="string">'d'</span>, <span class="string">'c'</span>, <span class="string">'b'</span>, <span class="string">'x'</span>]  <span class="comment"># 这边直接修改index，index个数必须和之前的一样，否则出错；</span></span><br><span class="line">print(y)    </span><br><span class="line"></span><br><span class="line"><span class="comment"># output</span></span><br><span class="line">letter</span><br><span class="line">a    <span class="number">1.0</span></span><br><span class="line">d    <span class="number">5.0</span></span><br><span class="line">c    <span class="number">3.0</span></span><br><span class="line">b    NaN</span><br><span class="line">x    NaN</span><br><span class="line">Name: weight of letters, dtype: float64</span><br><span class="line">a    <span class="number">1.0</span></span><br><span class="line">d    <span class="number">5.0</span></span><br><span class="line">c    <span class="number">3.0</span></span><br><span class="line">b    NaN</span><br><span class="line">x    NaN</span><br><span class="line">Name: weight of letters, dtype: float64</span><br></pre></td></tr></table></figure>
+<h3 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h3><ul>
+<li><p>DataFrame是一个类似表格的数据结构，索引包括列索引和行索引，每列可以是不同的值类型（数值，字符串，布尔等）；</p>
+<ul>
+<li><code>x = DataFrame(data, columns, index)</code>，colums是列属性，index是行属性； </li>
+<li>DataFrame的每一行和每一列都是一个Series，这个Series的name属性为当前的行/列索引名；</li>
+<li>关于查找某一列值用x[name]或者x.name，查找某一行值可以用x.loc[name],或者x.iloc[idx]，其中idx是下标值，从0开始，x.iloc[idx]是一个位置索引；</li>
+<li>DataFrame可以用字典生成，字典的键充当DataFrame的columns属性，即列名称；可以对columns重新指定，不匹配的值设置为NaN;重新设置index，其长度必须与实际行数一致，否则报错；</li>
+<li>注意：索引index，columns可以用x.index，x.columns来访问（一维数组），但是不可以修改；</li>
+</ul>
+</li>
+<li><p>用字典生成DataFrame</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas </span><br><span class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> Series,DataFrame</span><br><span class="line"></span><br><span class="line">data = &#123;<span class="string">'state'</span>: [<span class="string">'ok'</span>, <span class="string">'ok'</span>, <span class="string">'good'</span>, <span class="string">'bad'</span>],</span><br><span class="line">       <span class="string">'year'</span>:[<span class="number">2000</span>,<span class="number">2001</span>,<span class="number">2002</span>,<span class="number">2003</span>],</span><br><span class="line">       <span class="string">'pop'</span>:[<span class="number">3</span>,<span class="number">6.7</span>,<span class="number">8</span>,<span class="number">9.0</span>]&#125;</span><br><span class="line">x = DataFrame(data, index=[<span class="number">4</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],columns=[<span class="string">'pop'</span>,<span class="string">'year'</span>,<span class="string">'hello'</span>, <span class="string">'ss'</span>])</span><br><span class="line">print(x)</span><br><span class="line">print(<span class="string">'\n'</span>)</span><br><span class="line">print(x[<span class="string">'ss'</span>])  <span class="comment"># print(x.ss)</span></span><br><span class="line">print(<span class="string">'\n'</span>)</span><br><span class="line">print(x.loc[<span class="number">4</span>]) <span class="comment"># 打印出所有行索引名为4的Series</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># output</span></span><br><span class="line">   pop  year hello   ss</span><br><span class="line"><span class="number">4</span>  <span class="number">3.0</span>  <span class="number">2000</span>   NaN  NaN</span><br><span class="line"><span class="number">4</span>  <span class="number">6.7</span>  <span class="number">2001</span>   NaN  NaN</span><br><span class="line"><span class="number">5</span>  <span class="number">8.0</span>  <span class="number">2002</span>   NaN  NaN</span><br><span class="line"><span class="number">6</span>  <span class="number">9.0</span>  <span class="number">2003</span>   NaN  NaN</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="number">4</span>    NaN</span><br><span class="line"><span class="number">4</span>    NaN</span><br><span class="line"><span class="number">5</span>    NaN</span><br><span class="line"><span class="number">6</span>    NaN</span><br><span class="line">Name: ss, dtype: object</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   pop  year hello   ss</span><br><span class="line"><span class="number">4</span>  <span class="number">3.0</span>  <span class="number">2000</span>   NaN  NaN</span><br><span class="line"><span class="number">4</span>  <span class="number">6.7</span>  <span class="number">2001</span>   NaN  NaN</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改DataFrame数据</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">data = &#123;<span class="string">'state'</span>: [<span class="string">'ok'</span>, <span class="string">'ok'</span>, <span class="string">'good'</span>, <span class="string">'bad'</span>],</span><br><span class="line">       <span class="string">'year'</span>:[<span class="number">2000</span>,<span class="number">2001</span>,<span class="number">2002</span>,<span class="number">2003</span>],</span><br><span class="line">       <span class="string">'pop'</span>:[<span class="number">3</span>,<span class="number">6.7</span>,<span class="number">8</span>,<span class="number">9.0</span>]&#125;</span><br><span class="line">x = DataFrame(data, index=[<span class="number">4</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],columns=[<span class="string">'pop'</span>,<span class="string">'year'</span>,<span class="string">'hello'</span>, <span class="string">'ss'</span>, <span class="string">'tt'</span>])</span><br><span class="line"></span><br><span class="line">x[<span class="string">'ss'</span>] = [<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]                                     <span class="comment"># 修改行数据类似, x.loc[6] = [6,6,6,6]</span></span><br><span class="line">x[<span class="string">'tt'</span>] = <span class="keyword">True</span>                                          <span class="comment"># 这样修改，一整列都是TRUE</span></span><br><span class="line">x[<span class="string">'year'</span>] = np.arange(<span class="number">4</span>)                                <span class="comment"># 或者用numpy来修改</span></span><br><span class="line">x[<span class="string">'pop'</span>] = Series([<span class="number">-1</span>,<span class="number">-2</span>,<span class="number">-3</span>,<span class="number">-4</span>,<span class="number">0</span>], index=[<span class="number">4</span>,<span class="number">5</span>,<span class="number">9</span>,<span class="number">0</span>,<span class="number">8</span>])   <span class="comment"># 或者用Series来修改，没有指定的数据默认为NaN</span></span><br><span class="line">x[<span class="string">'new'</span>] = [<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>]   <span class="comment"># 给DataFrame添加新列，不能添加行</span></span><br><span class="line">x.index.name = <span class="string">'Index'</span></span><br><span class="line">x.columns.name = <span class="string">'Information'</span></span><br><span class="line">print(x)</span><br><span class="line"></span><br><span class="line">a = x.T                <span class="comment"># 对DataFrame做转置</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># output</span></span><br><span class="line">Information  pop  year hello  ss    tt  new</span><br><span class="line">Index                                      </span><br><span class="line"><span class="number">4</span>           <span class="number">-1.0</span>     <span class="number">0</span>   NaN   <span class="number">2</span>  <span class="keyword">True</span>    <span class="number">0</span></span><br><span class="line"><span class="number">4</span>           <span class="number">-1.0</span>     <span class="number">1</span>   NaN   <span class="number">3</span>  <span class="keyword">True</span>    <span class="number">0</span></span><br><span class="line"><span class="number">5</span>           <span class="number">-2.0</span>     <span class="number">2</span>   NaN   <span class="number">4</span>  <span class="keyword">True</span>    <span class="number">0</span></span><br><span class="line"><span class="number">6</span>            NaN     <span class="number">3</span>   NaN   <span class="number">5</span>  <span class="keyword">True</span>    <span class="number">0</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="基本功能"><a href="#基本功能" class="headerlink" title="基本功能"></a>基本功能</h3><h4 id="删除-增加：行-列—reindex-drop"><a href="#删除-增加：行-列—reindex-drop" class="headerlink" title="删除/增加：行/列—reindex/drop"></a>删除/增加：行/列—reindex/drop</h4><ul>
+<li>增加：x.reindex(index, columns, fill_value, method)<ul>
+<li>DataFrame中没说明是index还是columns，默认是index；</li>
+<li>多增加的没有明确值就给NaN,fill_value的值是用来修改那些NaN的；</li>
+<li>method：ffill/pad(前向填充值),bfill/backfill(后向填充值)，指的就是那些空着的行列是跟着前面的值填充还是跟着后面的值填充；</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas</span><br><span class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> Series, DataFrame, Index</span><br><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line"></span><br><span class="line">x = Series([<span class="number">3</span>,<span class="number">4</span>,<span class="number">7</span>], index=[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>])</span><br><span class="line">y = x.reindex([<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'d'</span>,<span class="string">'g'</span>])</span><br><span class="line">print(y)</span><br><span class="line">y = x.reindex([<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'d'</span>,<span class="string">'g'</span>],fill_value=<span class="number">0</span>)</span><br><span class="line">print(<span class="string">'\n'</span>,y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># output</span></span><br><span class="line">a    <span class="number">3.0</span></span><br><span class="line">b    <span class="number">4.0</span></span><br><span class="line">d    NaN</span><br><span class="line">g    NaN</span><br><span class="line">dtype: float64</span><br><span class="line"></span><br><span class="line">a    <span class="number">3</span></span><br><span class="line">b    <span class="number">4</span></span><br><span class="line">d    <span class="number">0</span></span><br><span class="line">g    <span class="number">0</span></span><br><span class="line">dtype: int64</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">data = &#123;<span class="string">'state'</span>: [<span class="string">'ok'</span>, <span class="string">'ok'</span>, <span class="string">'good'</span>, <span class="string">'bad'</span>],</span><br><span class="line">       <span class="string">'year'</span>:[<span class="number">2000</span>,<span class="number">2001</span>,<span class="number">2002</span>,<span class="number">2003</span>],</span><br><span class="line">       <span class="string">'pop'</span>:[<span class="number">3</span>,<span class="number">6.7</span>,<span class="number">8</span>,<span class="number">9.0</span>]&#125;</span><br><span class="line">x = DataFrame(data, index=[<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],columns=[<span class="string">'pop'</span>,<span class="string">'hello'</span>,<span class="string">'state'</span>,<span class="string">'year'</span>])</span><br><span class="line">x = x.reindex([<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>], method=<span class="string">'bfill'</span>)</span><br><span class="line">print(x)</span><br><span class="line"></span><br><span class="line"><span class="comment"># output</span></span><br><span class="line">   pop hello state    year</span><br><span class="line"><span class="number">3</span>  <span class="number">3.0</span>   NaN    ok  <span class="number">2000.0</span></span><br><span class="line"><span class="number">4</span>  <span class="number">6.7</span>   NaN    ok  <span class="number">2001.0</span></span><br><span class="line"><span class="number">5</span>  <span class="number">8.0</span>   NaN  good  <span class="number">2002.0</span></span><br><span class="line"><span class="number">6</span>  <span class="number">9.0</span>   NaN   bad  <span class="number">2003.0</span></span><br><span class="line"><span class="number">7</span>  NaN   NaN   NaN     NaN</span><br></pre></td></tr></table></figure>
+<ul>
+<li>删除：drop<ul>
+<li>删除某一行的值，<code>x.drop([label], axis=0)</code></li>
+<li>删除某一列的值，<code>x.drop([label], axis=1)</code></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">data = &#123;<span class="string">'state'</span>: [<span class="string">'ok'</span>, <span class="string">'ok'</span>, <span class="string">'good'</span>, <span class="string">'bad'</span>],</span><br><span class="line">       <span class="string">'year'</span>:[<span class="number">2000</span>,<span class="number">2001</span>,<span class="number">2002</span>,<span class="number">2003</span>],</span><br><span class="line">       <span class="string">'pop'</span>:[<span class="number">3</span>,<span class="number">6.7</span>,<span class="number">8</span>,<span class="number">9.0</span>]&#125;</span><br><span class="line">x = DataFrame(data, index=[<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],columns=[<span class="string">'pop'</span>,<span class="string">'hello'</span>,<span class="string">'state'</span>,<span class="string">'year'</span>])</span><br><span class="line">x = x.reindex([<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>], method=<span class="string">'bfill'</span>)</span><br><span class="line">x = x.drop([<span class="string">'pop'</span>], axis=<span class="number">1</span>)</span><br><span class="line">print(x)</span><br><span class="line"></span><br><span class="line"><span class="comment"># output</span></span><br><span class="line">  hello state    year</span><br><span class="line"><span class="number">3</span>   NaN    ok  <span class="number">2000.0</span></span><br><span class="line"><span class="number">4</span>   NaN    ok  <span class="number">2001.0</span></span><br><span class="line"><span class="number">5</span>   NaN  good  <span class="number">2002.0</span></span><br><span class="line"><span class="number">6</span>   NaN   bad  <span class="number">2003.0</span></span><br><span class="line"><span class="number">7</span>   NaN   NaN     NaN</span><br></pre></td></tr></table></figure>
+<h4 id="索引、选取、过滤"><a href="#索引、选取、过滤" class="headerlink" title="索引、选取、过滤"></a>索引、选取、过滤</h4><h4 id="算术运算与数据对齐"><a href="#算术运算与数据对齐" class="headerlink" title="算术运算与数据对齐"></a>算术运算与数据对齐</h4><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://www.tutorialspoint.com/python/python_data_aggregation.htm" target="_blank" rel="noopener">Python - Data Aggregation</a><br><a href="https://blog.csdn.net/cxmscb/article/details/54632492" target="_blank" rel="noopener">python之pandas的基本使用（1）</a><br><a href="https://juejin.im/entry/5a7457586fb9a063517247dc" target="_blank" rel="noopener">Python 数据科学入门教程：Pandas</a></p>
+
+        <hr>
+      
+    </div>
+
+    
+      
+    
+
+    
+      
+  
+  
+  <div class="post-tags">
+    <a href="/tags/python3/">#python3</a> <a href="/tags/pandas/">#pandas</a> <a href="/tags/numpy/">#numpy</a> <a href="/tags/data-aggregation/">#data aggregation</a>
+  </div>
+  <hr>
+  
+
+      <div class="post-more">
+  
+    <div class="post-pre">
+      <span>previous</span>
+      <a href="/2018/08/27/Decorator/">Python之装饰器</a>
+    </div>
+  
+  
+  <div class="post-next">
+    <span>next</span>
+    <a href="/2018/08/25/python-OOP/">python-面向对象编程(OOP)</a>
+  </div>
+  
+</div>
+      
+    
+  </div>
+</article>
+
+    </main>
+    
+    <div class="back-to-top" id="back-to-top"><i class="fas fa-arrow-alt-circle-up fa-2x"></i></div>
+
+    <footer class="blog-footer">
+  
+
+
+<hr>
+<div class="blog-footer-friends">
+  <p class="title">FRIENDS</p>
+  <div class="friends">
+  
+    <a href="https://kexin-li.github.io" target="_blank">ZERO&#39;s Blog</a>
+  
+  </div>
+</div>
+
+  
+
+
+  <div class="blog-footer-social">
+    <ul>
+      
+        
+          <li><a class="iconfont icon-email" href="mailto:dasd"></a></li>
+        
+      
+        
+          <li><a class="iconfont icon-instagram" href="dasd"></a></li>
+        
+      
+        
+          <li><a class="iconfont icon-douban" href="das"></a></li>
+        
+      
+        
+          <li><a class="iconfont icon-linkedin" href="dsa"></a></li>
+        
+      
+      
+        
+        <li><a class="iconfont icon-rss" href="/atom.xml"></a></li>
+      
+    </ul>
+  </div>
+ 
+  <div class="blog-footer-copyright">
+  <p class="copyright">Copyright © 2018 Tom Liu. Powered by <a href="https://hexo.io/">Hexo</a> and <a href="https://github.com/Kexin-Li/hexo-theme-cicada">Cicada</a>. <iframe src="https://ghbtns.com/github-btn.html?user=Kexin-Li&repo=hexo-theme-cicada&type=star&count=false&size=small" frameborder="0" scrolling="0" width="58px" height="30px" style="margin-bottom: -15px"></iframe></p>
+</div>
+</footer>
+
+<script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+
+
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<!--  -->
+
+
+
+
+<script type="text/javascript" src="/js/cicada.js"></script>
+  </body>
+</html>
