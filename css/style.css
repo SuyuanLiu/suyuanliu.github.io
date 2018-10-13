@@ -353,11 +353,11 @@ th {
 .blog-pager a, .post-more a {
   font-weight: bold; }
 
-.post-detail a, .blog-footer .blog-foot-copyright a, .card .content a {
+.post-detail a, .blog-footer-copyright a, .card .content a {
   color: #373C43;
   border-bottom: 1px #BEBBAE solid; }
 
-#menu a:hover, #menu a:active, .blog-header ul li a:hover, .blog-header ul li a:active, .post-more a:hover, .post-detail a:hover, .blog-archive .articles .articles-content:hover, .blog-archive .articles .articles-content:hover a, .blog-footer .blog-foot-copyright a:hover, .card .content a:hover, .card .content a:active {
+#menu a:hover, #menu a:active, .blog-header ul li a:hover, .blog-header ul li a:active, .post-more a:hover, .post-detail a:hover, .blog-archive .articles .articles-content:hover, .blog-archive .articles .articles-content:hover a, .blog-footer-copyright a:hover, .card .content a:hover, .card .content a:active {
   color: #5699e6;
   border-bottom: 1px #5699e6 solid; }
 
@@ -442,7 +442,7 @@ body {
   color: #fff; }
 
 .blog-pager {
-  margin: 5em 0; }
+  padding: 50px 0; }
   .blog-pager a {
     text-transform: uppercase;
     background-color: #BEBBAE;
@@ -480,6 +480,8 @@ body {
     font-weight: 800;
     letter-spacing: 1px;
     line-height: 20px; }
+    #menu a:hover {
+      border: none; }
 
 @font-face {
   font-family: 'iconfont';
@@ -550,7 +552,7 @@ body {
       display: inline; } }
 
 .blog-slide {
-  height: 420px;
+  height: 380px;
   background-color: #e1d6b9;
   width: 100%;
   background-size: cover;
@@ -564,15 +566,14 @@ body {
 .subtitle {
   text-align: center;
   position: relative;
-  top: 30%;
+  top: 20%;
   transform: translateY(-50%);
   padding-left: 20px;
   padding-right: 20px; }
   @media screen and (max-width: 900px) {
     .subtitle {
-      top: 20%; }
-      .subtitle h1 {
-        font-size: 1.5em; } }
+      top: 20%;
+      font-size: 1.5em; } }
 
 .post-more {
   display: flex;
@@ -580,14 +581,14 @@ body {
   .post-more a:hover {
     border-bottom: 0; }
   .post-more .post-pre {
-    flex: 1; }
+    flex-grow: 1; }
     .post-more .post-pre span {
       display: block;
       text-align: left;
       font-size: 12px;
       color: #75abea; }
   .post-more .post-next {
-    flex: 1;
+    flex-grow: 1;
     text-align: right; }
     .post-more .post-next span {
       display: block;
@@ -721,10 +722,6 @@ figure.highlight {
     .post-content {
       padding: 10px; } }
 
-@media screen and (max-width: 900px) {
-  .detail-excerpt {
-    display: none; } }
-
 .blog-archive .fas {
   margin-right: 10px; }
 
@@ -758,80 +755,116 @@ figure.highlight {
     .blog-tags .content span {
       margin-left: 0.5rem; }
 
+.blog-footer-social .iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 27px;
+  color: #89846C; }
+
+.blog-footer-social ul {
+  list-style: none;
+  text-align: center;
+  padding: 36px 0px; }
+
+.blog-footer-social li {
+  display: inline-block;
+  padding: 0px 8px; }
+
+.blog-footer-social .iconfont:hover, .blog-footer-social .iconfont:active {
+  color: #75abea; }
+
+.blog-footer-social .icon-instagram:before {
+  content: "\e611";
+  position: relative; }
+
+.blog-footer-social .icon-douban:before {
+  content: "\e610";
+  position: relative; }
+
+.blog-footer-social .icon-linkedin:before {
+  content: "\e60d";
+  position: relative; }
+
+.blog-footer-social .icon-weibo:before {
+  content: "\e602";
+  position: relative; }
+
+.blog-footer-social .icon-stackoverflow:before {
+  content: "\e603";
+  position: relative;
+  top: -3px; }
+
+.blog-footer-social .icon-email:before {
+  content: "\e605";
+  position: relative;
+  top: -2px; }
+
+.blog-footer-social .icon-facebook:before {
+  content: "\e601";
+  font-size: .95em;
+  position: relative;
+  top: -2px; }
+
+.blog-footer-social .icon-twitter:before {
+  content: "\e600"; }
+
+.blog-footer-social .icon-github:before {
+  content: "\e606";
+  position: relative;
+  top: -3px; }
+
+.blog-footer-social .icon-rss:before {
+  content: "\e604"; }
+
+.blog-footer-social .icon-google:before {
+  content: "\e609"; }
+
+.blog-footer-social .icon-zhihu:before {
+  content: "\e607";
+  font-size: .9em;
+  position: relative;
+  top: -2px; }
+
+.blog-footer-social .icon-pocket:before {
+  content: "\e856"; }
+
+.blog-footer-copyright {
+  font-size: 14px;
+  text-align: center;
+  color: #999; }
+  .blog-footer-copyright a {
+    color: #999;
+    font-weight: 400; }
+
+.blog-footer-friends {
+  margin-top: -10px; }
+  .blog-footer-friends .title {
+    color: #ccc;
+    font-weight: 600;
+    font-size: 14px; }
+  .blog-footer-friends .friends {
+    display: flex;
+    flex-wrap: wrap; }
+  .blog-footer-friends a {
+    margin-right: 1.2em;
+    color: #ccc; }
+    .blog-footer-friends a:hover {
+      color: #5699e6; }
+
 .blog-footer {
-  width: 100%;
-  height: 200px;
-  display: table; }
-  .blog-footer .footer {
-    display: table-cell;
-    vertical-align: middle; }
-  .blog-footer .blog-footer-social .iconfont {
-    font-family: "iconfont" !important;
-    font-size: 16px;
-    font-style: normal;
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-stroke-width: 0.2px;
-    -moz-osx-font-smoothing: grayscale;
-    font-size: 27px;
-    color: #89846C; }
-  .blog-footer .blog-footer-social ul {
-    list-style: none;
-    text-align: center;
-    padding: 36px 0px; }
-  .blog-footer .blog-footer-social li {
-    display: inline-block;
-    padding: 0px 8px; }
-  .blog-footer .blog-footer-social .iconfont:hover, .blog-footer .blog-footer-social .iconfont:active {
-    color: #75abea; }
-  .blog-footer .blog-footer-social .icon-instagram:before {
-    content: "\e611";
-    position: relative; }
-  .blog-footer .blog-footer-social .icon-douban:before {
-    content: "\e610";
-    position: relative; }
-  .blog-footer .blog-footer-social .icon-linkedin:before {
-    content: "\e60d";
-    position: relative; }
-  .blog-footer .blog-footer-social .icon-weibo:before {
-    content: "\e602";
-    position: relative; }
-  .blog-footer .blog-footer-social .icon-stackoverflow:before {
-    content: "\e603";
-    position: relative;
-    top: -3px; }
-  .blog-footer .blog-footer-social .icon-email:before {
-    content: "\e605";
-    position: relative;
-    top: -2px; }
-  .blog-footer .blog-footer-social .icon-facebook:before {
-    content: "\e601";
-    font-size: .95em;
-    position: relative;
-    top: -2px; }
-  .blog-footer .blog-footer-social .icon-twitter:before {
-    content: "\e600"; }
-  .blog-footer .blog-footer-social .icon-github:before {
-    content: "\e606";
-    position: relative;
-    top: -3px; }
-  .blog-footer .blog-footer-social .icon-rss:before {
-    content: "\e604"; }
-  .blog-footer .blog-footer-social .icon-google:before {
-    content: "\e609"; }
-  .blog-footer .blog-footer-social .icon-zhihu:before {
-    content: "\e607";
-    font-size: .9em;
-    position: relative;
-    top: -2px; }
-  .blog-footer .blog-footer-social .icon-pocket:before {
-    content: "\e856"; }
-  .blog-footer .blog-foot-copyright {
-    font-size: 14px;
-    text-align: center;
-    color: #999; }
-    .blog-footer .blog-foot-copyright a {
-      color: #999;
-      font-weight: 400; }
+  margin: 0 auto;
+  max-width: 900px;
+  margin-top: 60px; }
+  @media screen and (max-width: 900px) {
+    .blog-footer {
+      max-width: -webkit-calc(900px - (30px));
+      max-width: calc(900px - (30px));
+      padding-right: 10px;
+      padding-left: 10px; } }
 
 .back-to-top {
   display: none;
@@ -867,13 +900,14 @@ figure.highlight {
     border-radius: 50%; }
 
 .card-wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-auto-rows: minmax(150px, auto);
-  grid-gap: 5em;
-  margin-top: 50px; }
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
 
 .card {
+  width: 400px;
+  margin-bottom: 25px;
   background-color: #fff;
   box-shadow: 0px 10px 30px rgba(210, 190, 171, 0.3);
   -webkit-font-smoothing: antialiased;
