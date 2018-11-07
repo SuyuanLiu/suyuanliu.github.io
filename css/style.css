@@ -406,7 +406,7 @@ table {
     background: #faeed2; }
   table td, table th {
     padding: 6px;
-    font-size: 17px;
+    font-size: 14px;
     text-align: center;
     border: 1px solid rgba(0, 0, 0, 0.07); }
 
@@ -417,7 +417,7 @@ html {
 
 body {
   padding: 0;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.7;
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", sans-serif;
   scroll-behavior: smooth;
@@ -698,7 +698,7 @@ figure.highlight {
         text-align: left; }
   figure.highlight pre {
     overflow: auto;
-    font-size: 14px;
+    font-size: 13px;
     padding: 3px 0px;
     font-family: "SF Mono", Menlo, Monaco, "Lucida Console", monospace; }
     figure.highlight pre .line {
