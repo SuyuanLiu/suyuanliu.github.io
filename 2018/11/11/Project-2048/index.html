@@ -73,14 +73,14 @@
         
   
     <h1 class="post-title">
-      <a href="/2018/07/18/hello-world/">
-        Hello World
+      <a href="/2018/11/11/Project-2048/">
+        C++小程序之2048
       </a>
     </h1>
   
 
 <div class="post-meta">
-  2018-07-18
+  2018-11-11
   
     | by Tom
   
@@ -91,15 +91,17 @@
     </div>
     <div class="post-detail">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<br><a id="more"></a></p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>本文介绍用C++完成2048小程序的过程，主要包括环境的搭建以及代码的解释。</p>
+<a id="more"></a>
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><p>本文使用window10系统，项目所依赖的库是 <code>ncurses</code>,需要完成以下两个步骤：</p>
+<ol>
+<li><p>安装编译器 <a href="https://sourceforge.net/projects/mingw-w64/files/mingw-w64/mingw-w64-release/" target="_blank" rel="noopener">MinGW</a>，具体安装可参考<a href="https://www.cnblogs.com/findumars/p/8289454.html" target="_blank" rel="noopener">这里</a>。<br>(a) 安装时Architecture选择x86_64；<br>(b) 安装完成添加到系统变量path里面去，电脑-属性-高级环境配置-高级：环境变量，在path里面把mingw-w64\mingw64\bin的具体路径加入进去。<br>(c) 检查是否安装成功：win+R，输入cmd，在命令行里面输入g++，如果出现下图，则说明安装成功。<br><img src="/images/g++_check.png" alt="g++_check"></p>
+</li>
+<li><p>编译pdcurses库，在<a href="https://sourceforge.net/projects/pdcurses/files/pdcurses/3.6/pdcurs36.zip/download" target="_blank" rel="noopener">这里</a>下载，然后解压，假设加压到文件夹 D:\2048\pdcurses 下，在命令行里面<code>cd D:\2048\pdcurses\wincon</code>,然后<code>mingw32-make</code>编译pdcurses库，编译成功会看到下图。你可以在 D:\2048\pdcurs36\wincon 文件夹里面看到很多exe，是demo文件，可以点开看一下。<br><img src="/images/pdcurses_make.png" alt="pdcurses"></p>
+</li>
+</ol>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p>D:\2048\pdcurs36里的 curses.h 和 D:\2048\pdcurs36\wincon 里的 pdcurses.a 是工程中需要用到的文件，可以先拷到自己工程文件夹下。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://www.nowcoder.com/project/data/8" target="_blank" rel="noopener">https://www.nowcoder.com/project/data/8</a></p>
 
         <hr>
       
@@ -114,18 +116,18 @@
   
   
   <div class="post-tags">
-    <a href="/tags/hexo/">#hexo</a> <a href="/tags/post/">#post</a>
+    <a href="/tags/C/">#C++</a> <a href="/tags/Projects/">#Projects</a>
   </div>
   <hr>
   
 
       <div class="post-more">
   
-    <div class="post-pre">
-      <span>previous</span>
-      <a href="/2018/08/19/Python-JupyterNotebook/">Jupyter Notebook 安装及入门使用</a>
-    </div>
   
+  <div class="post-next">
+    <span>next</span>
+    <a href="/2018/11/09/C-Vector/">C++之容器</a>
+  </div>
   
 </div>
       

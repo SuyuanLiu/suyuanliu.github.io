@@ -53,7 +53,7 @@
       
     </ul>
   </nav>
-  <h1 class="subtitle"><span id='jinrishici-sentence'>Tom makes world better again</span></h1>
+  <h1 class="subtitle"><span id='jinrishici-sentence'>Hello World</span></h1>
 </header>
     <nav id="menu">
   
@@ -100,7 +100,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a[<span class="number">5</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; t(a, a+<span class="number">5</span>);       <span class="comment">// 地址是[0,5)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a2[<span class="number">5</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; t2；</span><br><span class="line">t2.insert(t2.begin, a2, a2+<span class="number">3</span>) <span class="comment">// 地址是左开右闭，t: 1,2,3</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; t3；</span><br><span class="line">t3.insert(t3.begin, <span class="number">6</span>, <span class="number">2</span>)    <span class="comment">// 在t3的begin位置放入6个2</span></span><br></pre></td></tr></table></figure>
 <p>还可以用同类型的容器进行赋值，或者copy，<code>copy(a_start, a_end, object_i)</code>,在object的第i位置，把a从start到end（左开右闭）拷贝过去；</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; t(<span class="number">10</span>);</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; t1(t);                    <span class="comment">// 同类型的容器进行赋值</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a(<span class="number">5</span>,<span class="number">1</span>);</span><br><span class="line"><span class="keyword">int</span> a1[<span class="number">5</span>] = &#123;<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>&#125;;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; b(<span class="number">10</span>);</span><br><span class="line">copy(a.begin(), a.end(), b.begin());  <span class="comment">//将a中元素全部拷贝到b开始的位置,拷贝区间为a.begin()-a.end()的左闭右开区间</span></span><br><span class="line">copy(a1, a1+<span class="number">5</span>, b.begin() + <span class="number">5</span>);</span><br></pre></td></tr></table></figure>
-<h2 id="vector的长度"><a href="#vector的长度" class="headerlink" title="vector的长度"></a>vector的长度</h2><p>利用 vector.size()，注意这里 vector.size() 的类型是 unsigned_int, （类型判断可以用typeid），所以在代码里面进行类似 i &lt; vector.size() - 1 之类的判断应当尽量避免, 因为当 vector.size() = 0 时，vector.size() - 1 = 4294967295；见代码示例（代码编译器是VS2015）：</p>
+<h2 id="vector的长度"><a href="#vector的长度" class="headerlink" title="vector的长度"></a>vector的长度</h2><p>利用 vector.size()，注意这里 vector.size() 的类型是 unsigned_int, （类型判断可以用typeid），所以在代码里面进行类似 i &lt; vector.size() - 1 之类的判断应当尽量避免, 因为当 vector.size() = 0 时，vector.size() - 1 = 4294967295；见代码示例（代码编译器是VS2015），LeetCode上面好像没这个问题：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;typeinfo&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; t;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="keyword">typeid</span>(t.size()).name() &lt;&lt; <span class="built_in">endl</span>;           <span class="comment">//输出： unsigned int</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; t.size() &lt;&lt; <span class="string">"  "</span> &lt;&lt; t.size() - <span class="number">1</span> &lt;&lt; <span class="built_in">endl</span>;  <span class="comment">//输出： 0  4294967295</span></span><br></pre></td></tr></table></figure>
 
         <hr>
@@ -122,6 +122,11 @@
   
 
       <div class="post-more">
+  
+    <div class="post-pre">
+      <span>previous</span>
+      <a href="/2018/11/11/Project-2048/">C++小程序之2048</a>
+    </div>
   
   
   <div class="post-next">

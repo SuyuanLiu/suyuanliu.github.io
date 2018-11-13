@@ -53,7 +53,7 @@
       
     </ul>
   </nav>
-  <h1 class="subtitle"><span id='jinrishici-sentence'>Tom makes world better again</span></h1>
+  <h1 class="subtitle"><span id='jinrishici-sentence'>Hello World</span></h1>
 </header>
     <nav id="menu">
   
@@ -74,7 +74,7 @@
   
     <h1 class="post-title">
       <a href="/2018/11/07/C-String/">
-        C++之字符串String
+        C++之String
       </a>
     </h1>
   
@@ -93,15 +93,18 @@
       
         <p>C++中的字符串以双引号嵌入，不同于Python（单引号双引号都可以）。C++中字符串最后以”\0”结尾。本文主要介绍C++中的字符串相关知识。</p>
 <a id="more"></a>
-<h2 id="string长度"><a href="#string长度" class="headerlink" title="string长度"></a>string长度</h2><p><a href="https://blog.csdn.net/z_qifa/article/details/77744482" target="_blank" rel="noopener">参考</a></p>
+<h2 id="string长度-未完"><a href="#string长度-未完" class="headerlink" title="string长度(未完)"></a>string长度(未完)</h2><p><a href="https://blog.csdn.net/z_qifa/article/details/77744482" target="_blank" rel="noopener">参考</a></p>
 <p>首先要在代码中<code>#include&lt;string&gt;</code>,字符串长度的获取有三种方式：string的成员方法size()和length(), strlen();</p>
-<ul>
-<li>length()就表示字符串的长度，size()表示的是string这个容器中元素的个数，使用方法如下：</li>
-</ul>
+<p>length()就表示字符串的长度，size()表示的是string这个容器中元素的个数，使用方法如下：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> str = <span class="string">"hello"</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.length() &lt;&lt; str.size() &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>strlen()也可以获取string的长度，但是需要c_str()将C++ string转换为char*类型，使用方法如下：<br>(后面再补)</li>
-</ul>
+<p>strlen()也可以获取string的长度，但是需要c_str()将C++ string转换为char*类型，使用方法如下：<br>(后面再补)</p>
+<h2 id="string比较"><a href="#string比较" class="headerlink" title="string比较"></a>string比较</h2><p>运算符 <code>==, &gt;, &lt;, &gt;=, &lt;=, !=</code> 都被重载用于字符串的比较，返回为bool类型(0, 1)，具体用法如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">string</span> aa = <span class="string">"hello"</span>;</span><br><span class="line"><span class="built_in">string</span> b = <span class="string">"hello"</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; (aa == b) &lt;&lt; <span class="built_in">endl</span>;    <span class="comment">// 输出：1</span></span><br></pre></td></tr></table></figure>
+<p>使用<code>compare</code>比较两个字符串s1,s2,格式如下<code>s1.compare(int pos, int n, s2, int pos2, int n2)</code>, 表示s1字符串从pos开始的n个字符，s2字符从pos2开始的n2个字符，二者之间的比较，其中pos，n或者pos2, n2可缺省；注意pso与n是同时出现或同时缺省的；具体用法如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> s1 = <span class="string">"abchello"</span>;</span><br><span class="line"><span class="built_in">string</span> s2 = <span class="string">"abcabcabc"</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; s1.compare(s2) &lt;&lt; <span class="built_in">endl</span>;              <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; s1.compare(<span class="number">0</span>, <span class="number">3</span>, s2) &lt;&lt; <span class="built_in">endl</span>;        <span class="comment">// -1</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; s1.compare(<span class="number">0</span>, <span class="number">3</span>, s2, <span class="number">0</span>, <span class="number">3</span>) &lt;&lt; <span class="built_in">endl</span>;  <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
+<p>注意如果是传统的字符串，不能使用 == 之类的去判断，这样只是在比较两个的地址，要用strcmp去比较（比较ASIC码）,strncmp比较忽略大小写,返回-1,0,1。 </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> s1[] = <span class="string">"hello"</span>;</span><br><span class="line"><span class="keyword">char</span> s2[] = <span class="string">"helloo"</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">strcmp</span>(s1, s2) &lt;&lt; <span class="built_in">endl</span>;   <span class="comment">// 输出：-1</span></span><br></pre></td></tr></table></figure>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://www.cnblogs.com/xFreedom/archive/2011/05/16/2048037.html" target="_blank" rel="noopener">标准C++中的string类的用法总结</a></p>
 
         <hr>
       
