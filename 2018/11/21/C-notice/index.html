@@ -73,14 +73,14 @@
         
   
     <h1 class="post-title">
-      <a href="/2018/11/09/Alg-Leetcode-Problems/">
-        leetcode遇到的问题
+      <a href="/2018/11/21/C-notice/">
+        C++注意点
       </a>
     </h1>
   
 
 <div class="post-meta">
-  2018-11-09
+  2018-11-21
   
     | by Tom
   
@@ -91,10 +91,14 @@
     </div>
     <div class="post-detail">
       
-        <p>这边记录一下在刷LeetCode过程中遇到的问题。</p>
+        <p>这边用来记录自己遇到的C++中值得注意的地方，方便以后回忆。</p>
 <a id="more"></a>
-<h2 id="vector与数组问题"><a href="#vector与数组问题" class="headerlink" title="vector与数组问题"></a>vector与数组问题</h2><p>在刷LeetCode的<a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/" target="_blank" rel="noopener">Longest Substring Without Repeating Characters</a>，在LeetCode里面遇到例子<code>&quot;pwwkew&quot;</code>结果错误，但是本地编译器(VS2015)的答案是正确的，目前还不知道错误原因是什么。下面贴出代码：(代码里把数组换成vector，LeetCode通过所有测试用例)</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s.length() == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> s.length();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> maxLen = <span class="number">1</span>;</span><br><span class="line">        <span class="comment">//vector&lt;int&gt; dict(256, -1);</span></span><br><span class="line">        <span class="keyword">int</span> dict[<span class="number">256</span>];</span><br><span class="line">        <span class="built_in">memset</span>(dict, <span class="number">-1</span>, <span class="number">256</span>);</span><br><span class="line">        dict[s[<span class="number">0</span>]] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(i &lt;= j &amp;&amp; j &lt; s.length())&#123;</span><br><span class="line">            <span class="keyword">if</span>(dict[s[j]] &gt;= i)&#123;</span><br><span class="line">                maxLen = max(maxLen, j-i);    </span><br><span class="line">                i = dict[s[j]] + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                dict[s[j]] = j;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(i == j)&#123;</span><br><span class="line">                dict[s[i]] = i;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        maxLen = max(maxLen, j-i);</span><br><span class="line">        <span class="keyword">return</span> maxLen;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="C-中点操作符-和箭头操作符-gt"><a href="#C-中点操作符-和箭头操作符-gt" class="headerlink" title="C++中点操作符(.)和箭头操作符(-&gt;)"></a>C++中点操作符(.)和箭头操作符(-&gt;)</h2><p>具体讲解看<a href="https://blog.csdn.net/qq457163027/article/details/54237782" target="_blank" rel="noopener">这里</a>。</p>
+<p><strong>.</strong> 左边必须是实体， <strong>-&gt;</strong> 左边必须是指针。</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ol>
+<li>依次访问数组中的值，除了利用下标，还可以:</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; num&#123;<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> n : nums)&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; n &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
         <hr>
       
@@ -109,22 +113,17 @@
   
   
   <div class="post-tags">
-    <a href="/tags/C/">#C++</a> <a href="/tags/leetcode/">#leetcode</a>
+    <a href="/tags/C/">#C++</a>
   </div>
   <hr>
   
 
       <div class="post-more">
   
-    <div class="post-pre">
-      <span>previous</span>
-      <a href="/2018/11/09/C-Vector/">C++之容器</a>
-    </div>
-  
   
   <div class="post-next">
     <span>next</span>
-    <a href="/2018/11/09/C-Arr/">C++之数组</a>
+    <a href="/2018/11/11/Project-2048/">C++小程序之2048</a>
   </div>
   
 </div>
