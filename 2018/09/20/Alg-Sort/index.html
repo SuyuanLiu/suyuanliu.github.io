@@ -35,7 +35,7 @@
   
 
   <script>
-    window.config = {"title":"Tom's Home","subtitle":"About Me","description":null,"author":"Tom Liu","language":"en-US","timezone":null,"url":"https://suyuanliu.github.io","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":null,"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":"atom-one-light","default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":10,"pagination_dir":"page","theme":"cicada","deploy":{"type":"git","repo":"git@github.com:SuyuanLiu/suyuanliu.github.io.git","branch":"master"},"ignore":[],"keywords":null,"index_generator":{"per_page":10,"order_by":"-date","path":""},"category_generator":{"per_page":10},"archive_generator":{"per_page":10,"yearly":true,"monthly":true,"daily":false},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true,"modifyAnchors":"","autolink":true},"tag_generator":{"per_page":10},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true},"favicon":"/images/favicon.ico","menu":{"home":"/","archives":"/archives"},"show_tag":true,"show_category":false,"excerpt_link":"Read More","fancybox":true,"disqus_shortname":null,"rss":"default","social":{"email":"suyuanliu0618@gmail.com","instagram":null,"douban":null,"linkedin":null,"weibo":null,"stackoverflow":"https://stackoverflow.com/users/9539495/liu-suyuan","facebook":null,"twitter":null,"github":"https://github.com/SuyuanLiu","google":null,"zhihu":null,"pocket":null},"friends":{"Mos's Blog":"https://kexin-li.github.io"},"google_analytics":null,"portfolio":{"subtitle":"Some Works","cards":{"card1":{"cover":"/images/screenshot.png","content":"Cicada is a concise and retro Hexo theme.","link":"https://github.com/Kexin-Li/hexo-theme-cicada"},"card2":{"cover":"/images/screenshot.png","content":"Cicada is a Hexo theme, it tastes like summer.","link":"http://kexin-li.github.io"},"card3":{"cover":"/images/screenshot.png","content":"Cicada is a Hexo theme, it tastes like summer.","link":"http://kexin-li.github.io"}}},"about":null,"poem":false};
+    window.config = {"title":"Tom's Home","subtitle":"About Me","description":null,"author":"Tom Liu","language":"en-US","timezone":null,"url":"https://suyuanliu.github.io","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":null,"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":"atom-one-light","default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":10,"pagination_dir":"page","theme":"cicada","deploy":{"type":"git","repo":"git@github.com:SuyuanLiu/suyuanliu.github.io.git","branch":"master"},"ignore":[],"keywords":null,"index_generator":{"per_page":10,"order_by":"-date","path":""},"archive_generator":{"per_page":10,"yearly":true,"monthly":true,"daily":false},"category_generator":{"per_page":10},"tag_generator":{"per_page":10},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true,"modifyAnchors":"","autolink":true},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true},"favicon":"/images/favicon.ico","menu":{"home":"/","archives":"/archives"},"show_tag":true,"show_category":false,"excerpt_link":"Read More","fancybox":true,"disqus_shortname":null,"rss":"default","social":{"email":"suyuanliu0618@gmail.com","instagram":null,"douban":null,"linkedin":null,"weibo":null,"stackoverflow":"https://stackoverflow.com/users/9539495/liu-suyuan","facebook":null,"twitter":null,"github":"https://github.com/SuyuanLiu","google":null,"zhihu":null,"pocket":null},"friends":{"Mos's Blog":"https://kexin-li.github.io"},"google_analytics":null,"portfolio":{"subtitle":"Some Works","cards":{"card1":{"cover":"/images/screenshot.png","content":"Cicada is a concise and retro Hexo theme.","link":"https://github.com/Kexin-Li/hexo-theme-cicada"},"card2":{"cover":"/images/screenshot.png","content":"Cicada is a Hexo theme, it tastes like summer.","link":"http://kexin-li.github.io"},"card3":{"cover":"/images/screenshot.png","content":"Cicada is a Hexo theme, it tastes like summer.","link":"http://kexin-li.github.io"}}},"about":null,"poem":false};
   </script>
 </head>
   <body>
@@ -91,23 +91,29 @@
     </div>
     <div class="post-detail">
       
-        <p>最近开始刷lintcode,随时进行总结。这次是排序算法，下面以升序排序为例记录算法思路。<br>完整代码在<a href="https://github.com/SuyuanLiu/LintCode" target="_blank" rel="noopener">GitHub</a>上面。</p>
+        <p>常见的排序算法有七种：冒泡排序，选择排序，插入排序，归并排序，快速排序，堆排序和希尔排序。文章将依次介绍这些排序算法，并在最后给出总结。</p>
+<p>代码在我的<a href="https://github.com/SuyuanLiu/Leetcode" target="_blank" rel="noopener">GitHub</a>，喜欢请star。</p>
 <a id="more"></a>
-<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><ul>
+<h2 id="算法稳定性"><a href="#算法稳定性" class="headerlink" title="算法稳定性"></a>算法稳定性</h2><p>排序算法的稳定性是指，排序过程中元素的相对位置是否发生变化，没有变化则稳定，否则不稳定。主要针对的是数组中出现几个相同的值时，比如下面数组:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[2, 3, 7, 5, 2, 1]    -- bubble sort --&gt;   [1, 2, 2, 3, 5, 7]   </span><br><span class="line"> a           b                                 a  b</span><br><span class="line"> </span><br><span class="line">[2, 3, 7, 5, 2, 1]    -- select sort --&gt;   [1, 2, 2, 3, 5, 7]  </span><br><span class="line"> a           b                                 b  a</span><br></pre></td></tr></table></figure></p>
+<p>为说明稳定性问题，给下面重复元素2加入对应下标a,b。经过冒泡排序后，2的相对位置没有变化，选择排序的相对位置发生变化。注意只要在排序<code>过程</code>中，相对位置发生变化就是不稳定算法。</p>
+<h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><p>对数组先进行一次遍历，两两相邻数值比较，大的向后移动，经过一轮遍历之后，最大的数值就移动的最后面；此时再对数组做0~(n-1)的遍历，数组中第二大的值就移动到n-2的位置，重复以上操作。整个过程就像冒泡一样，所以称之为冒泡排序。</p>
+<p>冒泡排序是稳定算法，因为在排序过程中，只是两两相邻中比较大的值往后移动，如果重复元素相邻，与最大值比较后是依次移动，所以重复元素的相对位置在排序过程中没有发生变化。</p>
+<p>冒泡排序时间复杂度为O(n^2)，空间复杂度为O(1)。</p>
+<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><h2 id="选择排序-1"><a href="#选择排序-1" class="headerlink" title="选择排序"></a>选择排序</h2><ul>
 <li>先遍历一遍数组，找出最小的值，与第一个位置的数交换；</li>
 <li>接着从第二个数开始遍历，再找出第二个小的数放在前面；</li>
 <li>以此类推，总共套用两个循环，时间复杂度O(n^2)；</li>
 <li>代码如下：</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sortIntegers</span><span class="params">(self, A)</span>:</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(A)<span class="number">-1</span>):</span><br><span class="line">            min_val = A[i]</span><br><span class="line">            temp = i </span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(i, len(A)<span class="number">-1</span>):</span><br><span class="line">                <span class="keyword">if</span> min_val &gt; A[j+<span class="number">1</span>]:</span><br><span class="line">                    min_val = A[j+<span class="number">1</span>]</span><br><span class="line">                    temp = j + <span class="number">1</span></span><br><span class="line">            A[temp] = A[i]</span><br><span class="line">            A[i] = min_val</span><br><span class="line">        <span class="keyword">return</span> A</span><br></pre></td></tr></table></figure>
-<h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><ul>
+<h2 id="冒泡排序-1"><a href="#冒泡排序-1" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><ul>
 <li>相邻两个数比较，比较大的数往下沉，一轮过去最大的数已经沉到最底下；</li>
 <li>接着再从头冒泡比较，（这次不用比最后一个），第二大的数也会沉下去；</li>
 <li>以此类推，两个循环，时间复杂度O(n^2)；</li>
 <li>代码如下：</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sortIntegers</span><span class="params">(self, A)</span>:</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(A)<span class="number">-1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(len(A)-i<span class="number">-1</span>):</span><br><span class="line">                <span class="keyword">if</span> A[j] &gt; A[j+<span class="number">1</span>]:</span><br><span class="line">                    temp = A[j]</span><br><span class="line">                    A[j] = A[j+<span class="number">1</span>]</span><br><span class="line">                    A[j+<span class="number">1</span>] = temp</span><br><span class="line">        <span class="keyword">return</span> A</span><br></pre></td></tr></table></figure>
-<h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><ul>
+<h2 id="插入排序-1"><a href="#插入排序-1" class="headerlink" title="插入排序"></a>插入排序</h2><ul>
 <li>先把前面几个数变成有序，后面的一个数依次跟前面的序列比较，插入到合适的位置；</li>
 <li>两个循环，时间复杂度O(n^2)；</li>
 <li>代码如下：</li>
@@ -123,19 +129,22 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">选择排序</td>
-<td>每一轮选择最小值放在最前面</td>
+<td style="text-align:center">冒泡排序</td>
+<td>两两比较，大的往后冒，一轮下去最大值到了最后</td>
 <td style="text-align:center">O(n^2)</td>
 </tr>
 <tr>
-<td style="text-align:center">冒泡排序</td>
-<td>两两比较，大的往后冒，一轮下去最大值到了最后</td>
+<td style="text-align:center">选择排序</td>
+<td>每一轮选择最小值放在最前面</td>
 <td style="text-align:center">O(n^2)</td>
 </tr>
 <tr>
 <td style="text-align:center">插入排序</td>
 <td>后面的插入前面有序的序列中</td>
 <td style="text-align:center">O(n^2)</td>
+</tr>
+<tr>
+<td style="text-align:center">归并排序</td>
 </tr>
 </tbody>
 </table>
