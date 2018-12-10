@@ -41,7 +41,7 @@
   <body>
     
 
-<header class="blog-slide" style="height: 230px">
+<header class="blog-slide" style="height: px">
   <nav class="blog-header">
     <a class="mobile toggle-button"><i class="fas fa-bars fa-lg"></i></a>
     <ul>
@@ -53,7 +53,7 @@
       
     </ul>
   </nav>
-  <h1 class="subtitle"><span id='jinrishici-sentence'>Archives</span></h1>
+  <h1 class="subtitle"><span id='jinrishici-sentence'>Hello World</span></h1>
 </header>
     <nav id="menu">
   
@@ -63,86 +63,73 @@
   
 </nav>
     
-    <main class="blog-main" style="margin-top: 50px">
-      <section class="blog-archive">
+    <main class="blog-main" style="margin-top: -150px">
+      <article class="blog-post">
   
-  
-    <div class="archive-year">
-      <h2 class="archive-title"><i class="fas fa-archive"></i>2018</h2>
-      <div class="articles">
-      
-        <div class="articles-content">
-            <time class="is-text-small" datetime="2018-12-10T11:05:06.000Z" itemprop="datePublished">12-10</time>
-            <a href="/2018/12/10/TF/">TensorFlow常见问题</a>
-        </div>
-        <hr>
-      
-        <div class="articles-content">
-            <time class="is-text-small" datetime="2018-12-08T07:40:14.000Z" itemprop="datePublished">12-08</time>
-            <a href="/2018/12/08/python-decorator-0/">python-decorator</a>
-        </div>
-        <hr>
-      
-        <div class="articles-content">
-            <time class="is-text-small" datetime="2018-12-08T07:37:25.000Z" itemprop="datePublished">12-08</time>
-            <a href="/2018/12/08/python-copy-decopy/">python-copy-decopy</a>
-        </div>
-        <hr>
-      
-        <div class="articles-content">
-            <time class="is-text-small" datetime="2018-12-03T02:33:47.000Z" itemprop="datePublished">12-03</time>
-            <a href="/2018/12/03/TF-load-multipal-models/">TensorFlow 同时载入多个模型</a>
-        </div>
-        <hr>
-      
-        <div class="articles-content">
-            <time class="is-text-small" datetime="2018-11-30T12:08:40.000Z" itemprop="datePublished">11-30</time>
-            <a href="/2018/11/30/Alg-BinaryTree/">二叉树总结</a>
-        </div>
-        <hr>
-      
-        <div class="articles-content">
-            <time class="is-text-small" datetime="2018-11-21T13:09:06.000Z" itemprop="datePublished">11-21</time>
-            <a href="/2018/11/21/C-notice/">C++注意点</a>
-        </div>
-        <hr>
-      
-        <div class="articles-content">
-            <time class="is-text-small" datetime="2018-11-11T08:19:52.000Z" itemprop="datePublished">11-11</time>
-            <a href="/2018/11/11/Project-2048/">C++小程序之2048</a>
-        </div>
-        <hr>
-      
-        <div class="articles-content">
-            <time class="is-text-small" datetime="2018-11-09T11:34:03.000Z" itemprop="datePublished">11-09</time>
-            <a href="/2018/11/09/C-Vector/">C++之容器</a>
-        </div>
-        <hr>
-      
-        <div class="articles-content">
-            <time class="is-text-small" datetime="2018-11-09T07:43:04.000Z" itemprop="datePublished">11-09</time>
-            <a href="/2018/11/09/Alg-Leetcode-Problems/">leetcode遇到的问题</a>
-        </div>
-        <hr>
-      
-        <div class="articles-content">
-            <time class="is-text-small" datetime="2018-11-09T02:12:10.000Z" itemprop="datePublished">11-09</time>
-            <a href="/2018/11/09/C-Arr/">C++之数组</a>
-        </div>
-        <hr>
-      
-      </div>
-    </div>
-  
-  
-<nav class="blog-pager">
-  
-  
-    <a class="next" href="/archives/page/2/">next<i class="fas fa-angle-right"></i></a>
-  
-</nav>
 
-</section>
+  <div class="post-content">
+    <div class="post-header">
+      
+        
+  
+    <h1 class="post-title">
+      <a href="/2018/12/10/TF/">
+        TensorFlow常见问题
+      </a>
+    </h1>
+  
+
+<div class="post-meta">
+  2018-12-10
+  
+    | by Tom
+  
+  
+</div>
+
+      
+    </div>
+    <div class="post-detail">
+      
+        <p>这边记录在使用tensorflow中遇到的一些疑惑等。</p>
+<a id="more"></a>
+<h2 id="Session-run-和-tensor-eval-的区别联系"><a href="#Session-run-和-tensor-eval-的区别联系" class="headerlink" title="Session.run 和 tensor.eval 的区别联系"></a>Session.run 和 tensor.eval 的区别联系</h2><p>在训练模型时，有时会用Session.run，有时又用tensor.eval，其实两者本质没有什么区别，只是Session.run可以同时获取多个tensor的值；另：设有tensor t，调用 <code>t.eval()</code> 时，等价于 <code>tf.get_default_session().run(t)</code>。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">loss_batch    = loss.eval(feed_dict=&#123;x:data_batch, y:label_batch&#125;)   </span><br><span class="line">_, loss_batch = sess.run([train_op, loss], feed_dict=&#123;x:data_batch, y:label_batch&#125;)</span><br></pre></td></tr></table></figure></p>
+<h2 id="tf-reduce-mean-精度问题"><a href="#tf-reduce-mean-精度问题" class="headerlink" title="tf.reduce_mean() 精度问题"></a>tf.reduce_mean() 精度问题</h2><p>在我跑代码的过程中，当预测结果全部正确时，会出现正确率 1.000001 或者 0.999994 的情况，这是tensorflow的精度问题，好像是一个speed/accuracy的权衡，目前不是很清楚怎么解决，好像有人在贡献代码？具体看<a href="https://github.com/tensorflow/tensorflow/issues/3775" target="_blank" rel="noopener">这里的讨论</a></p>
+<p>我的测试代码如下(python2)：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np </span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf </span><br><span class="line"><span class="keyword">import</span> os </span><br><span class="line"></span><br><span class="line">os.environ[<span class="string">'CUDA_VISIBLE_DEVICES'</span>] = <span class="string">'3'</span></span><br><span class="line"></span><br><span class="line">y = tf.placeholder(tf.float64, [<span class="number">1336</span>])</span><br><span class="line">y_ = np.ones([<span class="number">1336</span>])</span><br><span class="line">acc = tf.reduce_mean(tf.cast(tf.equal(y_, y), tf.float32))</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    <span class="keyword">print</span> sess.run(acc, feed_dict=&#123;y:np.ones([<span class="number">1336</span>])&#125;)    <span class="comment"># 1.0000001</span></span><br></pre></td></tr></table></figure>
+
+        <hr>
+      
+    </div>
+
+    
+      
+    
+
+    
+      
+  
+  
+  <div class="post-tags">
+    <a href="/tags/tensorflow/">#tensorflow</a>
+  </div>
+  <hr>
+  
+
+      <div class="post-more">
+  
+  
+  <div class="post-next">
+    <span>next</span>
+    <a href="/2018/12/08/python-decorator-0/">python-decorator</a>
+  </div>
+  
+</div>
+      
+    
+  </div>
+</article>
+
     </main>
     
     <div class="back-to-top" id="back-to-top"><i class="fas fa-arrow-alt-circle-up fa-2x"></i></div>
