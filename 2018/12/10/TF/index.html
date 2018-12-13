@@ -35,7 +35,7 @@
   
 
   <script>
-    window.config = {"title":"Tom's Home","subtitle":"About Me","description":null,"author":"Tom Liu","language":"en-US","timezone":null,"url":"https://suyuanliu.github.io","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":null,"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":"atom-one-light","default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":10,"pagination_dir":"page","theme":"cicada","deploy":{"type":"git","repo":"git@github.com:SuyuanLiu/suyuanliu.github.io.git","branch":"master"},"ignore":[],"keywords":null,"index_generator":{"per_page":10,"order_by":"-date","path":""},"archive_generator":{"per_page":10,"yearly":true,"monthly":true,"daily":false},"category_generator":{"per_page":10},"tag_generator":{"per_page":10},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true,"modifyAnchors":"","autolink":true},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true},"favicon":"/images/favicon.ico","menu":{"home":"/","archives":"/archives"},"show_tag":true,"show_category":false,"excerpt_link":"Read More","fancybox":true,"disqus_shortname":null,"rss":"default","social":{"email":"suyuanliu0618@gmail.com","instagram":null,"douban":null,"linkedin":null,"weibo":null,"stackoverflow":"https://stackoverflow.com/users/9539495/liu-suyuan","facebook":null,"twitter":null,"github":"https://github.com/SuyuanLiu","google":null,"zhihu":null,"pocket":null},"friends":{"Mos's Blog":"https://kexin-li.github.io"},"google_analytics":null,"portfolio":{"subtitle":"Some Works","cards":{"card1":{"cover":"/images/screenshot.png","content":"Cicada is a concise and retro Hexo theme.","link":"https://github.com/Kexin-Li/hexo-theme-cicada"},"card2":{"cover":"/images/screenshot.png","content":"Cicada is a Hexo theme, it tastes like summer.","link":"http://kexin-li.github.io"},"card3":{"cover":"/images/screenshot.png","content":"Cicada is a Hexo theme, it tastes like summer.","link":"http://kexin-li.github.io"}}},"about":null,"poem":false};
+    window.config = {"title":"Tom's Home","subtitle":"About Me","description":null,"author":"Tom Liu","language":"en-US","timezone":null,"url":"https://suyuanliu.github.io","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":null,"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":"atom-one-light","default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":10,"pagination_dir":"page","theme":"cicada","deploy":{"type":"git","repo":"git@github.com:SuyuanLiu/suyuanliu.github.io.git","branch":"master"},"ignore":[],"keywords":null,"index_generator":{"per_page":10,"order_by":"-date","path":""},"archive_generator":{"per_page":10,"yearly":true,"monthly":true,"daily":false},"category_generator":{"per_page":10},"tag_generator":{"per_page":10},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true,"modifyAnchors":"","autolink":true},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true},"favicon":"/images/favicon.ico","menu":{"home":"/","archives":"/archives"},"show_tag":true,"show_category":false,"excerpt_link":"Read More","fancybox":true,"disqus_shortname":"littletomliu","rss":"default","social":{"email":"suyuanliu0618@gmail.com","instagram":null,"douban":null,"linkedin":null,"weibo":null,"stackoverflow":"https://stackoverflow.com/users/9539495/liu-suyuan","facebook":null,"twitter":null,"github":"https://github.com/SuyuanLiu","google":null,"zhihu":null,"pocket":null},"friends":{"Mos's Blog":"https://kexin-li.github.io"},"google_analytics":"UA-130959629-1","portfolio":{"subtitle":"Some Works","cards":{"card1":{"cover":"/images/screenshot.png","content":"Cicada is a concise and retro Hexo theme.","link":"https://github.com/Kexin-Li/hexo-theme-cicada"},"card2":{"cover":"/images/screenshot.png","content":"Cicada is a Hexo theme, it tastes like summer.","link":"http://kexin-li.github.io"},"card3":{"cover":"/images/screenshot.png","content":"Cicada is a Hexo theme, it tastes like summer.","link":"http://kexin-li.github.io"}}},"about":null,"poem":false};
   </script>
 </head>
   <body>
@@ -97,6 +97,9 @@
 <h2 id="tf-reduce-mean-精度问题"><a href="#tf-reduce-mean-精度问题" class="headerlink" title="tf.reduce_mean() 精度问题"></a>tf.reduce_mean() 精度问题</h2><p>在我跑代码的过程中，当预测结果全部正确时，会出现正确率 1.000001 或者 0.999994 的情况，这是tensorflow的精度问题，好像是一个speed/accuracy的权衡，目前不是很清楚怎么解决，好像有人在贡献代码？具体看<a href="https://github.com/tensorflow/tensorflow/issues/3775" target="_blank" rel="noopener">这里的讨论</a></p>
 <p>我的测试代码如下(python2)：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np </span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf </span><br><span class="line"><span class="keyword">import</span> os </span><br><span class="line"></span><br><span class="line">os.environ[<span class="string">'CUDA_VISIBLE_DEVICES'</span>] = <span class="string">'3'</span></span><br><span class="line"></span><br><span class="line">y = tf.placeholder(tf.float64, [<span class="number">1336</span>])</span><br><span class="line">y_ = np.ones([<span class="number">1336</span>])</span><br><span class="line">acc = tf.reduce_mean(tf.cast(tf.equal(y_, y), tf.float32))</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    <span class="keyword">print</span> sess.run(acc, feed_dict=&#123;y:np.ones([<span class="number">1336</span>])&#125;)    <span class="comment"># 1.0000001</span></span><br></pre></td></tr></table></figure>
+<h2 id="tf-Variable-与-tf-get-variable"><a href="#tf-Variable-与-tf-get-variable" class="headerlink" title="tf.Variable() 与 tf.get_variable()"></a>tf.Variable() 与 tf.get_variable()</h2><p><a href="https://stackoverflow.com/questions/37098546/difference-between-variable-and-get-variable-in-tensorflow" target="_blank" rel="noopener">https://stackoverflow.com/questions/37098546/difference-between-variable-and-get-variable-in-tensorflow</a><br>看一下前3,4个答案。</p>
+<h2 id="numpy-数组切片超出范围问题"><a href="#numpy-数组切片超出范围问题" class="headerlink" title="numpy 数组切片超出范围问题"></a>numpy 数组切片超出范围问题</h2><p>在写读取数据的代码中，会设置一个pointer，每次遍历完一遍数组，会reset_pointer()，主代码中忘记reset，发现代码不会报错，原因是numpy数组在切片时，如果索引范围超出数组长度，不会报错，如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># if pointer &gt; train_data.shape[0]</span></span><br><span class="line">data_batch = train_data[pointer ： pointer + batch_size]   <span class="comment"># data_batch.shape = [0, ...]</span></span><br><span class="line"></span><br><span class="line">data = train_data[pointer]                                 <span class="comment"># cause error</span></span><br></pre></td></tr></table></figure>
 
         <hr>
       
@@ -126,6 +129,12 @@
   
 </div>
       
+  <div class="post-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </div>
+
     
   </div>
 </article>
@@ -187,6 +196,26 @@
 <!--  -->
 
 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130959629-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-130959629-1');
+  </script>
+
+
+  <script type="text/javascript">
+    var disqus_shortname = 'littletomliu';
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }());
+  </script>
 
 
 <script type="text/javascript" src="/js/cicada.js"></script>
