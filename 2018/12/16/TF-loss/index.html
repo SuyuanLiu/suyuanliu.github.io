@@ -41,7 +41,7 @@
   <body>
     
 
-<header class="blog-slide" style="height: 230px">
+<header class="blog-slide" style="height: px">
   <nav class="blog-header">
     <a class="mobile toggle-button"><i class="fas fa-bars fa-lg"></i></a>
     <ul>
@@ -53,7 +53,7 @@
       
     </ul>
   </nav>
-  <h1 class="subtitle"><span id='jinrishici-sentence'>Archives</span></h1>
+  <h1 class="subtitle"><span id='jinrishici-sentence'>Hello World</span></h1>
 </header>
     <nav id="menu">
   
@@ -63,56 +63,100 @@
   
 </nav>
     
-    <main class="blog-main" style="margin-top: 50px">
-      <section class="blog-archive">
+    <main class="blog-main" style="margin-top: -150px">
+      <article class="blog-post">
   
-  
-    <div class="archive-year">
-      <h2 class="archive-title"><i class="fas fa-archive"></i>2018</h2>
-      <div class="articles">
-      
-        <div class="articles-content">
-            <time class="is-text-small" datetime="2018-08-27T12:57:42.000Z" itemprop="datePublished">08-27</time>
-            <a href="/2018/08/27/Python-Decorator/">Python之装饰器</a>
-        </div>
-        <hr>
-      
-        <div class="articles-content">
-            <time class="is-text-small" datetime="2018-08-25T14:19:26.000Z" itemprop="datePublished">08-25</time>
-            <a href="/2018/08/25/Python-Pandas/">Pandas的基本使用</a>
-        </div>
-        <hr>
-      
-        <div class="articles-content">
-            <time class="is-text-small" datetime="2018-08-25T05:00:45.000Z" itemprop="datePublished">08-25</time>
-            <a href="/2018/08/25/Python-OOP/">python-面向对象编程(OOP)</a>
-        </div>
-        <hr>
-      
-        <div class="articles-content">
-            <time class="is-text-small" datetime="2018-08-20T09:09:34.000Z" itemprop="datePublished">08-20</time>
-            <a href="/2018/08/20/Python-Matplotlib/">Matplotlib 介绍</a>
-        </div>
-        <hr>
-      
-        <div class="articles-content">
-            <time class="is-text-small" datetime="2018-08-19T02:12:54.000Z" itemprop="datePublished">08-19</time>
-            <a href="/2018/08/19/Python-JupyterNotebook/">Jupyter Notebook 安装及入门使用</a>
-        </div>
-        <hr>
-      
-      </div>
-    </div>
-  
-  
-<nav class="blog-pager">
-  
-    <a class="prev" href="/archives/"><i class="fas fa-angle-left"></i>prev</a>
-  
-  
-</nav>
 
-</section>
+  <div class="post-content">
+    <div class="post-header">
+      
+        
+  
+    <h1 class="post-title">
+      <a href="/2018/12/16/TF-loss/">
+        TensorFlow里关于cross_entropy的那些API
+      </a>
+    </h1>
+  
+
+<div class="post-meta">
+  2018-12-16
+  
+    | by Tom
+  
+  
+</div>
+
+      
+    </div>
+    <div class="post-detail">
+      
+        <p>TensorFlow自带很多cross_entropy的API，容易混淆。查阅各种资料后，这边记录总结它们之间的区别，以及使用场合。</p>
+<a id="more"></a>
+<h2 id="关于cross-entropy的API"><a href="#关于cross-entropy的API" class="headerlink" title="关于cross_entropy的API"></a>关于cross_entropy的API</h2><p>文中主要介绍以下几个API：</p>
+<ul>
+<li>tf.nn.softmax_cross_entropy_with_logits</li>
+<li>tf.nn.sparse_softmax_cross_entropy_with_logits</li>
+<li>tf.losses.softmax_cross_entropy</li>
+<li><p>tf.losses.sparse_softmax_cross_entropy</p>
+</li>
+<li><p>tf.nn.sigmoid_cross_entropy_with_logits</p>
+</li>
+<li>tf.nn.weighted_cross_entropy_with_logits</li>
+<li>tf.losses.sigmoid_cross_entropy</li>
+<li><p>tf.contrib.losses.sigmoid_cross_entropy (DEPRECATED)</p>
+</li>
+<li><p>tf.nn.softmax_cross_entropy_with_logits (DEPRECATED IN 1.5)</p>
+</li>
+<li>tf.nn.softmax_cross_entropy_with_logits_v2</li>
+<li>tf.losses.softmax_cross_entropy</li>
+<li>tf.contrib.losses.softmax_cross_entropy (DEPRECATED)</li>
+</ul>
+<p>tf.nn.sparse_softmax_cross_entropy_with_logits<br>tf.losses.sparse_softmax_cross_entropy<br>tf.contrib.losses.sparse_softmax_cross_entropy (DEPRECATED)</p>
+<p>tf.nn.sampled_softmax_loss<br>tf.contrib.nn.rank_sampled_softmax_loss<br>tf.nn.nce_loss</p>
+<h2 id="初步理解"><a href="#初步理解" class="headerlink" title="初步理解"></a>初步理解</h2><p><strong>tf.nn.xxx 与 tf.losses.xxx：</strong> tf.nn.xxx 返回的是一组向量，而不是一个数值，如果求交叉熵，要再做<code>tf.redeuce_sum</code>；如果求交叉熵loss，要再做<code>tf.reduce_mean()</code>。tf.losses.xxx等价于tf.reduce_mean(tf.nn.xxx)。</p>
+<p><strong>xxx与sparse_xxx:</strong>二者作用是一样的，xxx的label是one-hot型，即大小是<code>[batchsize, num_clasee]</code>，对应的类别为1，其余为0；sparse-xxx的label</p>
+<p><strong>sigmoid与softmax:</strong>sigmoid</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://www.tensorflow.org/api_docs/python/" target="_blank" rel="noopener">Tensorflow官网</a><br><a href="https://www.jianshu.com/p/95d0dd92a88a" target="_blank" rel="noopener">tf中交叉熵计算</a><br><a href="https://stackoverflow.com/questions/47034888/how-to-choose-cross-entropy-loss-in-tensorflow" target="_blank" rel="noopener">How to choose cross-entropy loss in tensorflow?</a></p>
+
+        <hr>
+      
+    </div>
+
+    
+      
+    
+
+    
+      
+  
+  
+  <div class="post-tags">
+    <a href="/tags/tensorflow/">#tensorflow</a> <a href="/tags/loss/">#loss</a>
+  </div>
+  <hr>
+  
+
+      <div class="post-more">
+  
+  
+  <div class="post-next">
+    <span>next</span>
+    <a href="/2018/12/10/TF/">TensorFlow常见问题</a>
+  </div>
+  
+</div>
+      
+  <div class="post-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </div>
+
+    
+  </div>
+</article>
+
     </main>
     
     <div class="back-to-top" id="back-to-top"><i class="fas fa-arrow-alt-circle-up fa-2x"></i></div>
@@ -186,7 +230,7 @@
       var dsq = document.createElement('script');
       dsq.type = 'text/javascript';
       dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
       }());
   </script>
